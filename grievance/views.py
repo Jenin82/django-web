@@ -25,3 +25,10 @@ def createRoom(request):
       form.save()
       return redirect('home')
   return render(request, "grievance/room_form.html", context)
+
+def deleteRoom(request, pk):
+  room = Room.objects.get(id=pk)
+  if request.method == 'POST':
+    room.delete()
+    return redirect('home')
+  return render(request, "grievance/delete.html", {'obj': room})

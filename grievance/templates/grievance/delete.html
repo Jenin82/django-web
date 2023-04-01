@@ -1,0 +1,12 @@
+{% extends 'grievance/main.html' %}
+
+{% block content %}
+
+<form action="" method="post">
+	{% csrf_token %}
+	<p>Are you sure you want to delete the grievance "{{obj}}"?</p>
+	<a href="{{request.META.HTTP_REFERER}}">Go back</a>
+	<input type="submit" value="Confirm">
+</form>
+
+{% endblock %}
