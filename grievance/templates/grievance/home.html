@@ -2,8 +2,9 @@
 
 {% block content %}
 
-<h1>Hello World</h1>
+<h1>Grievance System</h1>
 <div>
+	<a href="{% url 'create-room' %}">New-grievance</a>
 	<div>
 		{% for room in rooms %}
 		<div>
