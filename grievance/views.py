@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from .models import Room
 from .forms import RoomForm
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -32,19 +33,18 @@ def logoutPage(request):
 		"message": "Logged out"
 	})
 
+@login_required(login_url='login')
 def home(request):
   rooms = Room.objects.all()
   context = {'rooms': rooms}
-  if request.user.is_authenticated:
-    return render(request, 'grievance/home.html', context)
-  else:
-    return render(request, 'grievance/login.html')
-
+  return render(request, 'grievance/home.html', context)
+  
 def room(request, pk):
   room = Room.objects.get(id=pk)
   context = {'room': room}
   return render(request, "grievance/room.html", context)
 
+@login_required(login_url='login')
 def createRoom(request):
   form = RoomForm()
   context = {'form': form}
@@ -57,6 +57,8 @@ def createRoom(request):
 
 def deleteRoom(request, pk):
   room = Room.objects.get(id=pk)
+  if request.user != room.host:
+    return HttpResponse('You are not allowed to delete someone else grievance')
   if request.method == 'POST':
     room.delete()
     return redirect('home')
