@@ -13,6 +13,8 @@ from django.contrib.auth import authenticate, login, logout
 # Create your views here.
 
 def loginPage(request):
+  if request.user.is_authenticated:
+    return redirect('home')
   if request.method == "POST":
     username = request.POST["username"]
     password = request.POST["password"]
