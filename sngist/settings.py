@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'grievance.apps.GrievanceConfig',
+    'website.apps.WebsiteConfig',
     'whitenoise.runserver_nostatic',
 ]
 
