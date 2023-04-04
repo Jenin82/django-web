@@ -86,9 +86,7 @@
 							<li class="nav-item">
 								<a class="nav-link" href="{% url 'admin:index' %}">Admin login</a>
 							</li>
-              <li class="nav-item">
-								<a class="nav-link" href="{% url 'login' %}">Student login</a>
-							</li>
+              
               <li class="nav-item">
 								<a class="nav-link" href="{% url 'g-home' %}">Grievance Portal</a>
 							</li>
@@ -102,21 +100,17 @@
 							</li>
 							{% else %}
 							<li class="nav-item">
-								<a class="nav-link" href="{% url 'login' %}">Login</a>
+								<a class="nav-link" href="{% url 'login' %}">Student Login</a>
 							</li>
 							{% endif %}
 
 							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">courses</a>
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Courses</a>
 									<ul class="dropdown-menu dropdown-menu-light">
-										<li><a class="dropdown-item" href="#">CSE</a></li>
-										<li><a class="dropdown-item" href="#">ME</a></li>
-										<li><a class="dropdown-item" href="#">EEE</a></li>
-										<li><a class="dropdown-item" href="#">CE</a></li>
-										<li>
-											<hr class="dropdown-divider">
-										</li>
-										<li><a class="dropdown-item" href="#">Something else here</a></li>
+										<li><a class="dropdown-item" href="{% url 'btech' %}">B.Tech</a></li>
+										<li><a class="dropdown-item" href="#">MCA</a></li>
+										<li><a class="dropdown-item" href="#">MBA</a></li>
+										<li><a class="dropdown-item" href="#">Polytechnic</a></li>
 									</ul>
 							</li>
 						</ul>
@@ -183,19 +177,19 @@
 
 				<div class="col-md-3 col-12 pt-3 d-flex justify-content-evenly">
 					<div class="card text-center" style="width: 18rem;">
-						<img src="{% static 'images/1.jpg' %}" class="card-img-top" alt="B.Tech Img">
+						<img src="https://github.com/BimalBabu217/PROJECT-/blob/main/1.jpg?raw=true" class="card-img-top" alt="B.Tech Img">
 							<h5 class="card-title">B-tech</h5>
 							<p class="card-text p-1">B.Tech (Bachelor in Technology ) is a four-year undergraduate degree program 
 								that prepares and practice with theoretical and practical knowledge in engineering and technology.</p>
 							<div class="card-footer">
-								<a href="" class="btn btn-warning">More Information</a>
+								<a href="{% url 'btech' %}" class="btn btn-warning">More Information</a>
 							</div>
 					</div>
 				</div>
 
 				<div class="col-md-3 col-12 pt-3 d-flex justify-content-evenly">
 					<div class="card text-center" style="width: 18rem;">
-						<img src="{% static 'images/2.webp' %}" class="card-img-top" alt="B.Tech Img">
+						<img src="https://raw.githubusercontent.com/BimalBabu217/PROJECT-/main/2.webp" class="card-img-top" alt="B.Tech Img">
 							<h5 class="card-title">MCA</h5>
 							<p class="card-text p-1">MCA (Master of Computer Applications) is a postgraduate degree 
 								program that provides students with advanced knowledge and skills in computer science 
