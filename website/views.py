@@ -9,3 +9,7 @@ def home(request):
 def btech(request):
   context = {}
   return render(request, 'website/btech.html', context)
+
+def mca(request):
+  context = {}
+  return render(request, 'website/mca.html', context)
