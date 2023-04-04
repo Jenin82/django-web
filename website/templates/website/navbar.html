@@ -1,0 +1,52 @@
+<!-- Navbar -->
+<nav class="navbar fixed-top z-3">
+	<div class="container-fluid pt-1">
+		<a href="{% url 'home' %}">
+			<img class="logo" src="http://sngist.org/contents/wp-content/themes/sngist18/assets/img/logo.png" alt="sngist-logo"></a>
+		</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="offcanvas offcanvas-end text-bg-light" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+			<div class="offcanvas-header ">
+				<h4 class="offcanvas-title" id="offcanvasDarkNavbarLabel">COLLEGE CODE: SNT</h4>
+				<button type="button" class="btn-close btn-close-black " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			</div>
+			
+			<div class="offcanvas-body">
+				<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'admin:index' %}">Admin login</a>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'g-home' %}">Grievance Portal</a>
+					</li>
+
+					{% if request.user.is_authenticated %}
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'user-profile' user.id %}">Profile</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'logout' %}">Logout</a>
+					</li>
+					{% else %}
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'login' %}">Student Login</a>
+					</li>
+					{% endif %}
+
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Courses</a>
+							<ul class="dropdown-menu dropdown-menu-light">
+								<li><a class="dropdown-item" href="{% url 'btech' %}">B.Tech</a></li>
+								<li><a class="dropdown-item" href="{% url 'mca' %}">MCA</a></li>
+								<li><a class="dropdown-item" href="{% url 'mba' %}">MBA</a></li>
+								<li><a class="dropdown-item" href="{% url 'poly' %}">Polytechnic</a></li>
+							</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</nav>
