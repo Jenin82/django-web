@@ -13,3 +13,11 @@ def btech(request):
 def mca(request):
   context = {}
   return render(request, 'website/mca.html', context)
+
+def mba(request):
+  context = {}
+  return render(request, 'website/mba.html', context)
+
+def poly(request):
+  context = {}
+  return render(request, 'website/poly.html', context)

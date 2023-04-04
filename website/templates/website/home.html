@@ -31,12 +31,12 @@
 				padding-top: 86px;
 		}
 		.sngist {
-			padding-top: 20rem;
+			padding-top: 18rem;
 			font-size: 5rem;
 			font-family: sans-serif;
 			color: azure;
 			font-weight: 900;
-			padding-bottom: 14rem;
+			padding-bottom: 16rem;
 		}
 		.bottom-heading {
 			background-color: #fb9228;
@@ -64,14 +64,16 @@
 		<!-- bg-image -->
 		<div class="row">
 			<div class="col-12 bg-image fixed-top p-0 z-n1">
-				<img class="" src="{% static 'images/college.png' %}" alt="college-image" width="100%" height="">
+				<img class="" src="https://github.com/Jenin82/college-website/blob/main/college.png?raw=true" alt="college-image" width="100%" height="670vh">
 			</div>
 		</div>
 
 		<!-- Navbar -->
 		<nav class="navbar fixed-top z-3">
 			<div class="container-fluid pt-1">
-				<img class="logo" src="http://sngist.org/contents/wp-content/themes/sngist18/assets/img/logo.png" alt="sngist-logo"></a>
+				<a href="{% url 'home' %}">
+					<img class="logo" src="http://sngist.org/contents/wp-content/themes/sngist18/assets/img/logo.png" alt="sngist-logo"></a>
+				</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -108,9 +110,9 @@
 								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Courses</a>
 									<ul class="dropdown-menu dropdown-menu-light">
 										<li><a class="dropdown-item" href="{% url 'btech' %}">B.Tech</a></li>
-										<li><a class="dropdown-item" href="#">MCA</a></li>
-										<li><a class="dropdown-item" href="#">MBA</a></li>
-										<li><a class="dropdown-item" href="#">Polytechnic</a></li>
+										<li><a class="dropdown-item" href="{% url 'mca' %}">MCA</a></li>
+										<li><a class="dropdown-item" href="{% url 'mba' %}">MBA</a></li>
+										<li><a class="dropdown-item" href="{% url 'poly' %}">Polytechnic</a></li>
 									</ul>
 							</li>
 						</ul>
@@ -208,7 +210,7 @@
 								students with a broad set of business skills and knowledge to pursue a career in 
 								management and leadership roles.</p>
 							<div class="card-footer">
-								<a href="" class="btn btn-warning">More Information</a>
+								<a href="{% url 'mba' %}" class="btn btn-warning">More Information</a>
 							</div>
 					</div>
 				</div>
@@ -221,7 +223,7 @@
 								providing students with  experience and technical expertise in specific fields such as engineering 
 								and applied sciences</p>
 							<div class="card-footer">
-								<a href="" class="btn btn-warning">More Information</a>
+								<a href="{% url 'poly' %}" class="btn btn-warning">More Information</a>
 							</div>
 					</div>
 				</div>
