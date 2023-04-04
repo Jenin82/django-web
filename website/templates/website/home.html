@@ -89,6 +89,23 @@
               <li class="nav-item">
 								<a class="nav-link" href="{% url 'login' %}">Student login</a>
 							</li>
+              <li class="nav-item">
+								<a class="nav-link" href="{% url 'g-home' %}">Grievance Portal</a>
+							</li>
+
+							{% if request.user.is_authenticated %}
+							<li class="nav-item">
+								<a class="nav-link" href="{% url 'user-profile' user.id %}">Profile</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{% url 'logout' %}">Logout</a>
+							</li>
+							{% else %}
+							<li class="nav-item">
+								<a class="nav-link" href="{% url 'login' %}">Login</a>
+							</li>
+							{% endif %}
+
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">courses</a>
 									<ul class="dropdown-menu dropdown-menu-light">
