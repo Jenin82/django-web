@@ -64,7 +64,7 @@
 		<!-- bg-image -->
 		<div class="row">
 			<div class="col-12 bg-image fixed-top p-0 z-n1">
-				<img class="" src="{% static 'images/college.png' %}" alt="college-image" width="" height="">
+				<img class="" src="{% static 'images/college.png' %}" alt="college-image" width="100%" height="">
 			</div>
 		</div>
 
@@ -80,32 +80,14 @@
 						<h4 class="offcanvas-title" id="offcanvasDarkNavbarLabel">COLLEGE CODE: SNT</h4>
 						<button type="button" class="btn-close btn-close-black " data-bs-dismiss="offcanvas" aria-label="Close"></button>
 					</div>
-					<div class="collapse navbar-collapse" id="navbarNav">
-						<ul class="navbar-nav">
-							<li class="nav-item">
-								<a class="nav-link active" aria-current="page" href="#">Home</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Features</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Pricing</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link disabled">Disabled</a>
-							</li>
-						</ul>
-					</div>
+					
 					<div class="offcanvas-body">
 						<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 							<li class="nav-item">
-								<a class="nav-link active" aria-current="page" href="#">Home</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Admin login</a>
+								<a class="nav-link" href="{% url 'admin:index' %}">Admin login</a>
 							</li>
               <li class="nav-item">
-								<a class="nav-link" href="#">Student login</a>
+								<a class="nav-link" href="{% url 'login' %}">Student login</a>
 							</li>
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">courses</a>
