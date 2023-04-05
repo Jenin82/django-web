@@ -1,21 +1,43 @@
-{% extends 'website/main.html' %}
+{% extends 'grievance/main.html' %}
 
 {% block content %}
 
 <h1>Grievance System</h1>
-<div class="pt-3">
-	<a href="{% url 'create-room' %}">
-		<img src="https://github.com/Jenin82/college-website/blob/main/Frame%203.png?raw=true" alt="">
-	</a>
-	<div>
+<div class="pt-4">
+	<a href="{% url 'create-room' %}"><button type="button" class="btn btn-warning btn-lg"><i class="bi bi-plus-circle"></i> Create new grievance</button></a>
+	<style>
+		.btn-lg {
+			border: 1px solid white;
+		}
+	</style>
+	<div class="row pt-3">
+		
 		{% for room in rooms %}
-		<div>
-			{% if request.user == room.host %}
-			<a href="{% url 'delete-room' room.id %}">Delete</a>
-			{% endif %}
-			<h3>{{room.id}} -- <a href="{% url 'room' room.id %}">{{room.name}}</a></h3>
-		</div>
+		<section class="container text-dark">
+			<div class="card mb-3">
+				<div class="card-body">
+
+					<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+						<div class="txt-group mr-2" role="group" aria-label="First group">
+							<h5 class="card-title black">{{room.name}}</h5>
+						</div>
+						<div class="input-group">
+							{% if request.user == room.host %}
+							<a href="{% url 'delete-room' room.id %}" class="ms-2">
+								<button type="button" class="btn btn-danger">Delete</button>
+							</a>
+							{% endif %}
+							<a href="{% url 'room' room.id %}" class="ms-2">
+								<button type="button" class="btn btn-success">Open</button>
+							</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
 		{% endfor %}
+
 	</div>
 </div>
 
