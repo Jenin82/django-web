@@ -7,6 +7,8 @@ urlpatterns = [
     path('mca/', views.mca, name="mca"),
     path('mba/', views.mba, name="mba"),
     path('poly/', views.poly, name="poly"),
+    path('cse/', views.cse, name="cse"),
+    path('civil/', views.civil, name="civil"),
     
 	
 ]

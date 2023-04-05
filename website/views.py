@@ -21,3 +21,11 @@ def mba(request):
 def poly(request):
   context = {}
   return render(request, 'website/poly.html', context)
+
+def cse(request):
+  context = {}
+  return render(request, 'website/cse.html', context)
+
+def civil(request):
+  context = {}
+  return render(request, 'website/civil.html', context)
