@@ -61,7 +61,7 @@ def createRoom(request):
       room = form.save(commit=False)
       room.host = request.user
       room.save()
-      return redirect('home')
+      return redirect('g-home')
   return render(request, "grievance/room_form.html", context)
 
 def deleteRoom(request, pk):
@@ -70,6 +70,6 @@ def deleteRoom(request, pk):
     return HttpResponse('You are not allowed to delete someone else grievance')
   if request.method == 'POST':
     room.delete()
-    return redirect('home')
+    return redirect('g-home')
   return render(request, "grievance/delete.html", {'obj': room})
 

@@ -7,9 +7,9 @@ urlpatterns = [
     path('mca/', views.mca, name="mca"),
     path('mba/', views.mba, name="mba"),
     path('poly/', views.poly, name="poly"),
-    path('cse/', views.cse, name="cse"),
-    path('civil/', views.civil, name="civil"),
-    
-	
+    path('e_cse/', views.e_cse, name="cse"),
+    path('e_civil/', views.e_civil, name="civil"),
+    path('e_me/', views.e_me, name="me"),
+    path('e_eee/', views.e_eee, name="eee"),
 ]
 

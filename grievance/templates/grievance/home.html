@@ -1,10 +1,12 @@
-{% extends 'grievance/main.html' %}
+{% extends 'website/main.html' %}
 
 {% block content %}
 
 <h1>Grievance System</h1>
-<div>
-	<a href="{% url 'create-room' %}">New-grievance</a>
+<div class="pt-3">
+	<a href="{% url 'create-room' %}">
+		<img src="https://github.com/Jenin82/college-website/blob/main/Frame%203.png?raw=true" alt="">
+	</a>
 	<div>
 		{% for room in rooms %}
 		<div>

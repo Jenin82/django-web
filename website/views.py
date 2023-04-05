@@ -22,10 +22,18 @@ def poly(request):
   context = {}
   return render(request, 'website/poly.html', context)
 
-def cse(request):
+def e_cse(request):
   context = {}
-  return render(request, 'website/cse.html', context)
+  return render(request, 'website/e-cse.html', context)
 
-def civil(request):
+def e_civil(request):
   context = {}
-  return render(request, 'website/civil.html', context)
+  return render(request, 'website/e-civil.html', context)
+
+def e_me(request):
+  context = {}
+  return render(request, 'website/e-me.html', context)
+
+def e_eee(request):
+  context = {}
+  return render(request, 'website/e-eee.html', context)
