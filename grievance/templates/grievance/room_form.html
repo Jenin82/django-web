@@ -2,12 +2,38 @@
 
 {% block content %}
 
-<div class="" style="padding-top: 10rem">
+<div class="" style="padding-top: 10rem;">
+	<center>
+		<div class="card text-center w-75">
+			<div class="card-body">
+				<form action="" method="post" id="room-form">
+					{% csrf_token %}
+					<div class="mb-3">
+						<label for="exampleFormControlInput1" class="form-label"><h3>Grievance Title</h3></label>
+						<input type="text" name="title" form="room-form" class="form-control" id="exampleFormControlInput1" placeholder="">
+					</div>
+					<div class="mb-3">
+						<label for="exampleFormControlTextarea1" class="form-label"><h4>Description</h4></label>
+						<textarea class="form-control" name="description" form="room-form" id="exampleFormControlTextarea1" rows="3" placeholder="Explain the issue in detail"></textarea>
+					</div>
+					<div class="mb-3">
+						<a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary">Go back</a>
+						<button type="submit" form="room-form" value="Submit" class="btn btn-success">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</center>
+</div>
+
+{% endblock %}
+
+
+
+<!-- <div class="" style="padding-top: 10rem">
 	<form action="" method="post" >
 		{% csrf_token %}
 		{{form.as_p}}
 		<input type="submit" value="Submit">
 	</form>
-</div>
-
-{% endblock %}
+</div> -->

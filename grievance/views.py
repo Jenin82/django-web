@@ -53,15 +53,26 @@ def userProfile(request, pk):
 
 @login_required(login_url='login')
 def createRoom(request):
-  form = RoomForm()
-  context = {'form': form}
+  room = Room()
+  context = {'room': room}
   if request.method == 'POST':
-    form = RoomForm(request.POST)
-    if form.is_valid():
-      room = form.save(commit=False)
-      room.host = request.user
-      room.save()
-      return redirect('g-home')
+    title = request.POST["title"]
+    description = request.POST["description"]
+    room.host = request.user
+    room.name = title
+    room.description = description
+    room.save()
+    return redirect('g-home')
+  
+  # form = RoomForm()
+  # context = {'form': form}
+  # if request.method == 'POST':
+  #   form = RoomForm(request.POST)
+  #   if form.is_valid():
+  #     room = form.save(commit=False)
+  #     room.host = request.user
+  #     room.save()
+  #     return redirect('g-home')
   return render(request, "grievance/room_form.html", context)
 
 def deleteRoom(request, pk):

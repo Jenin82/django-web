@@ -2,8 +2,22 @@
 
 {% block content %}
 
-<h1>{{room.name}}</h1>
-<p>{{room.description}}</p>
+
+<div class="" style="padding-top: 10rem;">
+	<center>
+		<div class="card text-center w-75">
+			<div class="card-header">
+				<h1 class="card-title">{{room.name}}</h1>
+			</div>
+			<div class="card-body">
+				<h5 class="card-text text-danger">{{room.description}}</h5>
+			</div>
+			<div class="card-footer text-body-secondary">
+				<a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary">Go back</a>
+			</div>
+		</div>
+	</center>
+</div>
 
 
 {% endblock %}
