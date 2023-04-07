@@ -12,29 +12,6 @@ from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 
-def loginPage(request):
-  if request.user.is_authenticated:
-    return redirect('home')
-  if request.method == "POST":
-    username = request.POST["username"]
-    password = request.POST["password"]
-    user = authenticate(request, username=username , password=password)
-    if user is not None:
-      login(request, user)
-      return HttpResponseRedirect(reverse("home"))
-    else:
-      return render(request, "grievance/login.html", {
-				"message": "Invalid username or password"
-			})
-    
-  return render(request, "grievance/login.html") 
-
-def logoutPage(request):
-  logout(request)
-  return render(request, "grievance/login.html", {
-		"message": "Logged out"
-	})
-
 @login_required(login_url='login')
 def home(request):
   rooms = Room.objects.all()
