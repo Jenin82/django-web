@@ -6,7 +6,6 @@ urlpatterns = [
 		path('logout/', views.logoutPage, name="logout"),
     path('', views.home, name="g-home"),
     path('room/<str:pk>/', views.room, name="room"),
-    path('profile/<str:pk>/', views.userProfile, name="user-profile"),
     path('create-room/', views.createRoom, name="create-room"),
     path('delete-room/<str:pk>/', views.deleteRoom, name="delete-room"),
     

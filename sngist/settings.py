@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     
     'grievance.apps.GrievanceConfig',
     'website.apps.WebsiteConfig',
+    'user.apps.UserConfig',
     'whitenoise.runserver_nostatic',
 ]
 

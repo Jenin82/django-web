@@ -46,11 +46,6 @@ def room(request, pk):
   context = {'room': room}
   return render(request, "grievance/room.html", context)
 
-def userProfile(request, pk):
-  user = User.objects.get(id=pk)
-  context = {'user': user}
-  return render(request, "grievance/profile.html", context)
-
 @login_required(login_url='login')
 def createRoom(request):
   room = Room()
