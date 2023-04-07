@@ -12,16 +12,20 @@ def userProfile(request, pk):
   context = {'user': user}
   return render(request, "user/profile.html", context)
 
+
 def loginPage(request):
   if request.user.is_authenticated:
-    return redirect('home')
+    return redirect('request.META.HTTP_REFERER')
   if request.method == "POST":
     username = request.POST["username"]
     password = request.POST["password"]
     user = authenticate(request, username=username , password=password)
     if user is not None:
       login(request, user)
-      return HttpResponseRedirect(reverse("home"))
+      if 'next' in request.POST:
+        return HttpResponseRedirect(request.POST.get('next'))
+      else:
+        return render(request, "website/home.html")
     else:
       return render(request, "user/login.html", {
 				"message": "Invalid username or password"
@@ -29,8 +33,9 @@ def loginPage(request):
     
   return render(request, "user/login.html") 
 
+
 def logoutPage(request):
   logout(request)
-  return render(request, "user/login.html", {
+  return render(request, "website/home.html", {
 		"message": "Logged out"
 	})
