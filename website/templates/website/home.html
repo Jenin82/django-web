@@ -67,6 +67,14 @@
 
 	</style>
 
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#myModal").modal('show');
+		});
+	</script>
+	
+
 </head>
 <body class="m-0">
 	<div class="container-fluid m-0">
@@ -112,7 +120,7 @@
 							</li>
 							{% else %}
 							<li class="nav-item">
-								<a class="nav-link" href="{% url 'login' %}">Student Login</a>
+								<a class="nav-link" href="{% url 'login' %}">Login</a>
 							</li>
 							{% endif %}
 
@@ -131,6 +139,8 @@
 			</div>
 		</nav>
 
+		
+
 		<!-- SNGIST Heading -->
 		<div class="row pb-3">
 			<div class="col-12">
@@ -140,7 +150,22 @@
 			</div>
 		</div>
 
-		
+		{% if message %}
+		<!-- Modal -->
+		<div id="myModal" class="modal fade">
+			<div class="modal-dialog">
+					<div class="modal-content">
+							<div class="modal-header">
+									<h5 class="modal-title">Alert</h5>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<h4 class="text-danger">{{ message }}</h4>
+							</div>
+					</div>
+			</div>
+		</div>
+		{% endif %}
 
 		<!-- Bottom heading -->
 		<section class="">

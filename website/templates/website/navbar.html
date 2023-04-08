@@ -15,9 +15,11 @@
 			
 			<div class="offcanvas-body">
 				<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+					{% if request.user.is_superuser %}
 					<li class="nav-item">
 						<a class="nav-link" href="{% url 'admin:index' %}">Admin Portal</a>
 					</li>
+					{% endif %}
 					
 					<li class="nav-item">
 						<a class="nav-link" href="{% url 'g-home' %}">Grievance Portal</a>
@@ -32,7 +34,7 @@
 					</li>
 					{% else %}
 					<li class="nav-item">
-						<a class="nav-link" href="{% url 'login' %}">Student Login</a>
+						<a class="nav-link" href="{% url 'login' %}">Login</a>
 					</li>
 					{% endif %}
 
