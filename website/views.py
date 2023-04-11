@@ -37,3 +37,7 @@ def e_me(request):
 def e_eee(request):
   context = {}
   return render(request, 'website/e-eee.html', context)
+
+def dept_cse(request):
+  context = {}
+  return render(request, 'website/dept_cse.html', context)

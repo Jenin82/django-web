@@ -11,5 +11,6 @@ urlpatterns = [
     path('e_civil/', views.e_civil, name="civil"),
     path('e_me/', views.e_me, name="me"),
     path('e_eee/', views.e_eee, name="eee"),
+    path('dept_cse/', views.dept_cse, name="d-cse"),
 ]
 
