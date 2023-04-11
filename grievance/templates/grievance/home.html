@@ -47,6 +47,9 @@
 							<h5 class="card-title black">{{room.name}}</h5>
 						</div>
 						<div class="input-group">
+							<a href="" class="ms-2">
+								<button type="button" class="btn btn-primary">{{room.status}}</button>
+							</a>
 							{% if request.user == room.host %}
 							<a href="{% url 'delete-room' room.id %}" class="ms-2">
 								<button type="button" class="btn btn-danger">Delete</button>
