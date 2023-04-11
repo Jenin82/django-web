@@ -31,6 +31,7 @@ def createRoom(request):
     title = request.POST["title"]
     description = request.POST["description"]
     room.host = request.user
+    room.status = 'in-progress'
     room.name = title
     room.description = description
     room.save()
