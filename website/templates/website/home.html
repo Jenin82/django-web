@@ -13,7 +13,7 @@
 		.logo {
 			width: 20vh;
 		}
-		.navbar { 
+		.navbar1 { 
 			box-shadow: 
         inset 0px 100px 100px -10px #ccccccc5,
         inset 0px 0px 0px 0px #cccccc33; 
@@ -43,8 +43,12 @@
 			background-color: #fb9228;
 		}
 		
-		a {
-			color: white;
+		a, .a {
+			color: black;
+			text-decoration: none;
+			font-size: large;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			font-weight: bold;
 		}
 		.body {
 			background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
@@ -87,11 +91,59 @@
 		</div>
 
 		<!-- Navbar -->
-		<nav class="navbar fixed-top z-3">
-			<div class="container-fluid pt-1">
+		<nav class="navbar navbar1 fixed-top z-3">
+			<div class="container-fluid pt-1 ">
 				<a href="{% url 'home' %}">
 					<img class="logo" src="http://sngist.org/contents/wp-content/themes/sngist18/assets/img/logo.png" alt="sngist-logo"></a>
 				</a>
+
+				<nav class="navbar navbar-expand-lg z-4">
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+						<div class="input-group">
+							<a href="" class="ms-5">Home</a>
+							<a href="" class="ms-5">About</a>
+							<a href="" class="ms-5">News</a>
+							<a href="" class="ms-5">Events</a>
+							
+							<div class="nav-item dropdown a">
+								<a class="nav-link dropdown-toggle ms-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Departments</a>
+									<ul class="dropdown-menu dropdown-menu-light">
+										<li><a class="dropdown-item" href="">CSE</a></li>
+										<li><a class="dropdown-item" href="">ME</a></li>
+										<li><a class="dropdown-item" href="">EEE</a></li>
+										<li><a class="dropdown-item" href="">CE</a></li>
+										<li><a class="dropdown-item" href="">MCA</a></li>
+										<li><a class="dropdown-item" href="">MBA</a></li>
+										<li><a class="dropdown-item" href="">BSH</a></li>
+									</ul>
+							</div>
+							<div class="nav-item dropdown a">
+								<a class="nav-link dropdown-toggle ms-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Courses</a>
+									<ul class="dropdown-menu dropdown-menu-light">
+										<li><a class="dropdown-item" href="{% url 'btech' %}">B.Tech</a></li>
+										<li><a class="dropdown-item" href="{% url 'mca' %}">MCA</a></li>
+										<li><a class="dropdown-item" href="{% url 'mba' %}">MBA</a></li>
+										<li><a class="dropdown-item" href="{% url 'poly' %}">Polytechnic</a></li>
+									</ul>
+								</div>
+							<a href="{% url 'g-home' %}" class="ms-5">Grievance Portal</a>
+							<a href="" class="ms-5">Contact</a>
+							<a href="" class="ms-5">Placements</a>
+							<div class="nav-item dropdown a">
+								<a class="nav-link dropdown-toggle ms-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Clubs</a>
+									<ul class="dropdown-menu dropdown-menu-light">
+										<li><a class="dropdown-item" href="">IEDC</a></li>
+										<li><a class="dropdown-item" href="">NSS</a></li>
+										<li><a class="dropdown-item" href="">VEGA</a></li>
+									</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				</nav>
+
+
 				<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -125,6 +177,39 @@
 								<a class="nav-link" href="{% url 'login' %}">Login</a>
 							</li>
 							{% endif %}
+							<li class="nav-item">
+								<a class="nav-link" href="">About</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">News</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">Events</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Departments</a>
+									<ul class="dropdown-menu dropdown-menu-light">
+										<li><a class="dropdown-item" href="">CSE</a></li>
+										<li><a class="dropdown-item" href="">ME</a></li>
+										<li><a class="dropdown-item" href="">EEE</a></li>
+										<li><a class="dropdown-item" href="">CE</a></li>
+										<li><a class="dropdown-item" href="">MCA</a></li>
+										<li><a class="dropdown-item" href="">MBA</a></li>
+										<li><a class="dropdown-item" href="">BSH</a></li>
+									</ul>
+								</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">Courses</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">Clubs & Associations</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">Contact</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">Placements</a>
+							</li>
 
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Courses</a>
