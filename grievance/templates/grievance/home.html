@@ -13,6 +13,7 @@
 	<div class="row pt-3">
 		
 		{% for room in rooms %}
+		{% if request.user.is_superuser %}
 		<section class="container text-dark">
 			<div class="card mb-3">
 				<div class="card-body">
@@ -36,6 +37,31 @@
 				</div>
 			</div>
 		</section>
+		{% elif request.user == room.host %}
+		<section class="container text-dark">
+			<div class="card mb-3">
+				<div class="card-body">
+
+					<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+						<div class="txt-group mr-2" role="group" aria-label="First group">
+							<h5 class="card-title black">{{room.name}}</h5>
+						</div>
+						<div class="input-group">
+							{% if request.user == room.host %}
+							<a href="{% url 'delete-room' room.id %}" class="ms-2">
+								<button type="button" class="btn btn-danger">Delete</button>
+							</a>
+							{% endif %}
+							<a href="{% url 'room' room.id %}" class="ms-2">
+								<button type="button" class="btn btn-success">Open</button>
+							</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+		{% endif %}
 		{% endfor %}
 
 	</div>
