@@ -31,7 +31,7 @@ def createRoom(request):
     title = request.POST["title"]
     description = request.POST["description"]
     room.host = request.user
-    room.status = 'in-progress'
+    room.status = 'In-progress'
     room.name = title
     room.description = description
     room.save()
@@ -57,3 +57,14 @@ def deleteRoom(request, pk):
     return redirect('g-home')
   return render(request, "grievance/delete.html", {'obj': room})
 
+def statusResolved(request, pk):
+  room = Room.objects.get(id=pk)
+  room.status = 'Resolved'
+  room.save()
+  return redirect('g-home')
+
+def statusReopen(request, pk):
+  room = Room.objects.get(id=pk)
+  room.status = 'Re-opened'
+  room.save()
+  return redirect('g-home')

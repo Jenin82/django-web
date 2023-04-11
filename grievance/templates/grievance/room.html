@@ -15,6 +15,16 @@
 			<div class="card-footer text-body-secondary">
 				<a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary">Go back</a>
 			</div>
+			{% if request.user.is_superuser %}
+			<div class="card-footer text-body-secondary">
+				<a href="{% url 'resolved' room.id %}" class="btn btn-success">Mark as resolved</a>
+			</div>
+			{% endif %}
+			{% if request.user == room.host %}
+			<div class="card-footer text-body-secondary">
+				<a href="{% url 'reopen' room.id %}" class="btn btn-danger">Re-open</a>
+			</div>
+			{% endif %}
 		</div>
 	</center>
 </div>
