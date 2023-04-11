@@ -21,9 +21,11 @@
 			</div>
 			{% endif %}
 			{% if request.user == room.host %}
+				{% if room.status == 'Resolved' %}
 			<div class="card-footer text-body-secondary">
 				<a href="{% url 'reopen' room.id %}" class="btn btn-danger">Re-open</a>
 			</div>
+				{% endif %}
 			{% endif %}
 		</div>
 	</center>
