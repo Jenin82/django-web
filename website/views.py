@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from website.models import CseDepartment
+
 # Create your views here.
 
 def home(request):
@@ -39,5 +41,7 @@ def e_eee(request):
   return render(request, 'website/e-eee.html', context)
 
 def dept_cse(request):
-  context = {}
+  dept = CseDepartment.objects.all()
+  context = { 'dept' : dept}
   return render(request, 'website/dept_cse.html', context)
+
