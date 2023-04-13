@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
-from .models import Room
+from .models import Message, Room
 from .forms import RoomForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -20,7 +20,19 @@ def home(request):
   
 def room(request, pk):
   room = Room.objects.get(id=pk)
-  context = {'room': room}
+  room_messages = room.message_set.all().order_by('created')
+  
+  
+  if request.method == 'POST':
+    message = Message.objects.create(
+			user = request.user,
+			room = room,
+			body = request.POST.get('body')
+		)
+    return redirect('room', pk=room.id)
+  
+  
+  context = {'room': room, 'room_messages': room_messages}
   return render(request, "grievance/room.html", context)
 
 @login_required(login_url='login')
@@ -68,3 +80,10 @@ def statusReopen(request, pk):
   room.status = 'Re-opened'
   room.save()
   return redirect('g-home')
+
+# def createMessage(request, pk):
+#   room = Room.objects.get(id=pk)
+#   message = Message.objects.get()
+#   message.user = request.user
+#   message.room = room
+#   message.body = 
