@@ -54,7 +54,7 @@
 
 			</div>
 			<div class="card-footer text-body-secondary">
-				<a href="{{request.META.HTTP_REFERER}}" class="btn btn-warning">Go back</a>
+				<a href="{% url 'g-home' %}" class="btn btn-warning">Go back</a>
 			</div>
 			{% if request.user.is_superuser %}
 			<div class="card-footer text-body-secondary">
