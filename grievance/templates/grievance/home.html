@@ -23,13 +23,25 @@
 							<h5 class="card-title black">{{room.name}}</h5>
 						</div>
 						<div class="input-group">
+							{% if room.status == 'In-progress' %}
 							<a href="" class="ms-2">
-								<button type="button" class="btn btn-primary">{{room.status}}</button>
+								<button type="button" class="btn btn-info">Status: {{room.status}}</button>
 							</a>
+							{% elif room.status == 'Resolved' %}
+							<a href="" class="ms-2">
+								<button type="button" class="btn btn-success">Status: {{room.status}}</button>
+							</a>
+							{% elif room.status == 'Re-opened' %}
+							<a href="" class="ms-2">
+								<button type="button" class="btn btn-danger">Status: {{room.status}}</button>
+							</a>
+							{% endif %}
 							{% if request.user == room.host %}
+							{% if room.status != 'In-progress' %}
 							<a href="{% url 'delete-room' room.id %}" class="ms-2">
 								<button type="button" class="btn btn-danger">Close</button>
 							</a>
+							{% endif %}
 							{% endif %}
 							<a href="{% url 'room' room.id %}" class="ms-2">
 								<button type="button" class="btn btn-success">Open</button>
@@ -50,13 +62,25 @@
 							<h5 class="card-title black">{{room.name}}</h5>
 						</div>
 						<div class="input-group">
+							{% if room.status == 'In-progress' %}
 							<a href="" class="ms-2">
-								<button type="button" class="btn btn-primary">{{room.status}}</button>
+								<button type="button" class="btn btn-info">Status: {{room.status}}</button>
 							</a>
+							{% elif room.status == 'Resolved' %}
+							<a href="" class="ms-2">
+								<button type="button" class="btn btn-success">Status: {{room.status}}</button>
+							</a>
+							{% elif room.status == 'Re-opened' %}
+							<a href="" class="ms-2">
+								<button type="button" class="btn btn-danger">Status: {{room.status}}</button>
+							</a>
+							{% endif %}
 							{% if request.user == room.host %}
+							{% if room.status != 'In-progress' %}
 							<a href="{% url 'delete-room' room.id %}" class="ms-2">
 								<button type="button" class="btn btn-danger">Close</button>
 							</a>
+							{% endif %}
 							{% endif %}
 							<a href="{% url 'room' room.id %}" class="ms-2">
 								<button type="button" class="btn btn-success">Open</button>
