@@ -2,16 +2,38 @@
 
 {% block content %}
 
+<style>
+	.crop {
+		width: 30rem;
+		height: 15rem;
+		overflow: hidden;
+	}
+	.crop img {
+		width: 400px;
+		height: 300px;
+	}
+	
+</style>
 
 <div class="pb-3" style="padding-top: 5rem;">
-	<div class="row p-3">
-		<h3>{{news.title}}</h3>
-		{% for pic in newsImages %}
-		<img src="{{pic.image}}" alt="">
+	<div class="row text-center pb-2">
+		<h1>{{news.title}}</h1>
+	</div>
+	<div class="row px-lg-5">
+		<p class="justify">{{news.body}}</p>
+	</div>
+	<hr>
+	<div class="row text-center">
+		<h2>Images</h2>
+	</div>
+	<div class="row d-flex justify-content-center ps-lg-4 ms-lg-3">
+	{% for pic in newsImages %}
+		<div class="col-lg-4 col-12 crop">
+			<img src="{{pic.image}}" class="img-fluid rounded" alt="">
+		</div>
 		{% endfor %}
 	</div>
 </div>
-
 
 
 {% endblock %}

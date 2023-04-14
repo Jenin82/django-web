@@ -50,3 +50,8 @@ def cse_news(request, pk):
   images = cseDepartment.images.all().order_by('-created')
   context = {'news' : cseDepartment, 'newsImages' : images}
   return render(request, 'website/cse_news.html', context)
+
+def cse_events(request):
+  dept = CseDepartment.objects.all()
+  context = { 'dept' : dept}
+  return render(request, 'website/cse_events.html', context)

@@ -7,7 +7,8 @@ from django.db import models
 class CseDepartment(models.Model):
   title = models.CharField(max_length=200)
   image = models.CharField(max_length=300)
-  description = models.TextField()
+  description = models.TextField(max_length=300)
+  body = models.TextField()
   updated = models.DateTimeField(auto_now=True)
   created = models.DateTimeField(auto_now_add=True) 
   

@@ -75,10 +75,10 @@
 	<div class="row">
 		<ul class="nav nav-tabs bg-orange nav-fill">
 			<li class="nav-item">
-				<a class="nav-link rounded-0 bg-dark active" aria-current="page" href="">News</a>
+				<a class="nav-link rounded-0" aria-current="page" href="{% url 'd-cse' %}">News</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link rounded-0" aria-current="page" href="{% url 'cse-events' %}">Events</a>
+				<a class="nav-link rounded-0 bg-dark active" aria-current="page" href="">Events</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link rounded-0" aria-current="page" href="#">Teachers</a>
@@ -92,30 +92,6 @@
 		</ul>
 	</div>
 	
-
-	<center>
-		<div class="row">
-		{% for department in dept %}
-			<div class="col-lg-3 col-12 pb-3">
-				<div class="card mt-3 lg-w-75 h-100">
-					<div class="img-max mx-auto pt-lg-3">
-						<a href="{% url 'cse-news' department.id %}">
-						<img src="{{department.image}}" class="card-img-top img-fluid rounded" alt="News Image">
-						</a>
-					</div>
-					<div class="card-body">
-						<h5 class="card-title">{{department.title}}</h5>
-						<p class="card-text justify">{{department.description}}</p>
-					</div>
-					<div class="card-footer">
-						<p class="card-text"><small class="text-body-secondary">Updated on {{department.created|date}}</small></p>
-					</div>
-				</div>
-			</div>
-		{% endfor %}
-		</div>
-	</center>
-
 
 
 
