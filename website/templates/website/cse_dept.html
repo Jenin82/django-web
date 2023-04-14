@@ -36,6 +36,10 @@
 	body{
 		background-color: wheat !important;
 	}
+	.img-max {
+		max-width: 40rem;
+		max-height: 20rem;
+	}
 	
 </style>
 
@@ -89,13 +93,17 @@
 	<center>
 		<div class="row">
 		{% for department in dept %}
-			<div class="col-lg-6 col-12">
-				<div class="card mt-3 lg-w-75">
-					<img src="{{department.image}}" class="card-img-top img-fluid" alt="News Image">
+			<div class="col-lg-6 col-12 pb-3">
+				<div class="card mt-3 lg-w-75 h-100">
+					<div class="img-max mx-auto pt-lg-3">
+						<a href="">
+						<img src="{{department.image}}" class="card-img-top img-fluid rounded" alt="News Image">
+						</a>
+					</div>
 					<div class="card-body">
 						<h5 class="card-title">{{department.title}}</h5>
 						<p class="card-text">{{department.description}}</p>
-						<p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+						<p class="card-text"><small class="text-body-secondary">Updated on {{department.created|date}}</small></p>
 					</div>
 				</div>
 			</div>
