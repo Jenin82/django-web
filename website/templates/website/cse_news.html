@@ -1,0 +1,17 @@
+{% extends 'website/main.html' %}
+
+{% block content %}
+
+
+<div class="pb-3" style="padding-top: 5rem;">
+	<div class="row p-3">
+		<h3>{{news.title}}</h3>
+		{% for pic in newsImages %}
+		<img src="{{pic.image}}" alt="">
+		{% endfor %}
+	</div>
+</div>
+
+
+
+{% endblock %}

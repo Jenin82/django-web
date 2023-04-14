@@ -80,10 +80,3 @@ def statusReopen(request, pk):
   room.status = 'Re-opened'
   room.save()
   return redirect('g-home')
-
-# def createMessage(request, pk):
-#   room = Room.objects.get(id=pk)
-#   message = Message.objects.get()
-#   message.user = request.user
-#   message.room = room
-#   message.body = 

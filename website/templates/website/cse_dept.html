@@ -34,7 +34,7 @@
 		color: black;
 	}
 	body{
-		background-color: wheat !important;
+		background-color: #f8f9fa !important;
 	}
 	.img-max {
 		max-width: 40rem;
@@ -96,7 +96,7 @@
 			<div class="col-lg-6 col-12 pb-3">
 				<div class="card mt-3 lg-w-75 h-100">
 					<div class="img-max mx-auto pt-lg-3">
-						<a href="">
+						<a href="{% url 'news' department.id %}">
 						<img src="{{department.image}}" class="card-img-top img-fluid rounded" alt="News Image">
 						</a>
 					</div>

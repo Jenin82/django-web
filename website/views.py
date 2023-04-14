@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from website.models import CseDepartment
+from website.models import CseDepartment,NewsImage
 
 # Create your views here.
 
@@ -45,3 +45,8 @@ def cse_dept(request):
   context = { 'dept' : dept}
   return render(request, 'website/cse_dept.html', context)
 
+def cse_news(request, pk):
+  cseDepartment = CseDepartment.objects.get(id=pk)
+  images = cseDepartment.images.all().order_by('-created')
+  context = {'news' : cseDepartment, 'newsImages' : images}
+  return render(request, 'website/cse_news.html', context)

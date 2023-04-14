@@ -11,6 +11,9 @@ urlpatterns = [
     path('e_civil/', views.e_civil, name="civil"),
     path('e_me/', views.e_me, name="me"),
     path('e_eee/', views.e_eee, name="eee"),
+    
     path('cse_dept/', views.cse_dept, name="d-cse"),
+    path('cse_news/<str:pk>/', views.cse_news, name="news"),
+    
 ]
 
