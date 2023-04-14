@@ -40,8 +40,8 @@ def e_eee(request):
   context = {}
   return render(request, 'website/e-eee.html', context)
 
-def dept_cse(request):
+def cse_dept(request):
   dept = CseDepartment.objects.all()
   context = { 'dept' : dept}
-  return render(request, 'website/dept_cse.html', context)
+  return render(request, 'website/cse_dept.html', context)
 

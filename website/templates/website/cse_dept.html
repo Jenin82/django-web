@@ -1,0 +1,115 @@
+{% extends 'website/main.html' %}
+
+{% block content %}
+
+<style>
+	.orange {
+		color: orange;
+	}
+	.bg-orange {
+		background-color: orange!important;
+	}
+	.dept_title {
+		font-family: 'Exo 2', sans-serif;
+		font-weight: 600;
+		font-size: 35px;
+	}
+	.col-md-6 {
+		float:none;
+		display:inline-block;
+	}
+	
+	.imageholder {
+		width: 50%;
+		margin: 0px auto;
+		padding: 0px;
+		float:left;
+	}
+	a {
+		text-decoration: none;
+		color: white!important;
+	}
+	.white {
+		background-color: white;
+		color: black;
+	}
+	body{
+		background-color: wheat !important;
+	}
+	
+</style>
+
+<div class="pb-3 outer" style="padding-top: 4rem;">
+	
+	<!-- top small nav -->
+	<div class="row bg-orange">
+		<div class="col-12 pt-3 pb-1">
+			<h6>Sree Narayana Guru Institute of Science and Technology</h6>
+		</div>
+	</div>
+
+	<div class="row bg-light">
+		<div class="col-12 pt-3">
+			<center>
+			<h1 class="dept_title pb-1">
+				<span class="orange">Department</span> of <br>
+				Computer Science <br>and <span class="orange">Engineering</span>
+			</h1>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+				Possimus vero quam voluptatem eius quidem ipsum vel nesciunt 
+				ipsam, doloribus at est, odio magnam tenetur, itaque harum asperiores non laboriosam ullam?
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid autem assumenda qui perferendis voluptatem temporibus amet beatae ab veniam odit harum deserunt, ex consectetur ut natus officiis, eius veritatis dolorum.
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae odit, reprehenderit dignissimos dolor sapiente fuga doloribus molestiae eligendi reiciendis sit. Quaerat inventore sapiente illum repellendus consequuntur neque obcaecati nisi nesciunt!
+			</p>
+			</center>
+		</div>
+	</div>
+	<!-- section nav -->
+	<div class="row">
+		<ul class="nav nav-tabs bg-orange nav-fill">
+			<li class="nav-item">
+				<a class="nav-link rounded-0 bg-dark active" aria-current="page" href="#">News</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link rounded-0" aria-current="page" href="#">Events</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link rounded-0" aria-current="page" href="#">Teachers</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link rounded-0" aria-current="page" href="#">Achievements</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link rounded-0" aria-current="page" href="#">Syllabus</a>
+			</li>
+		</ul>
+	</div>
+	
+
+	<center>
+		<div class="row">
+		{% for department in dept %}
+			<div class="col-lg-6 col-12">
+				<div class="card mt-3 lg-w-75">
+					<img src="{{department.image}}" class="card-img-top img-fluid" alt="News Image">
+					<div class="card-body">
+						<h5 class="card-title">{{department.title}}</h5>
+						<p class="card-text">{{department.description}}</p>
+						<p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+		</div>
+	</center>
+
+
+
+
+
+</div>
+
+
+
+
+{% endblock %}

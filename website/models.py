@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class CseDepartment(models.Model):
   #host = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
   #topic = models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True)
