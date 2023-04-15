@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from website.models import CseDepartment,NewsImage
+from website.models import CseDepartment, CseEvent
 
 # Create your views here.
 
@@ -52,6 +52,6 @@ def cse_news(request, pk):
   return render(request, 'website/cse_news.html', context)
 
 def cse_events(request):
-  dept = CseDepartment.objects.all()
-  context = { 'dept' : dept}
+  events = CseEvent.objects.all()
+  context = {'events' : events}
   return render(request, 'website/cse_events.html', context)

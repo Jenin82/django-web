@@ -25,7 +25,7 @@
 		padding: 0px;
 		float:left;
 	}
-	a {
+	.sec a {
 		text-decoration: none;
 		color: white!important;
 	}
@@ -46,7 +46,7 @@
 	
 </style>
 
-<div class="pb-3 outer" style="padding-top: 4rem;">
+<div class="pb-5 outer" style="padding-top: 4rem;">
 	
 	<!-- top small nav -->
 	<div class="row bg-orange">
@@ -62,7 +62,7 @@
 				<span class="orange">Department</span> of <br>
 				Computer Science <br>and <span class="orange">Engineering</span>
 			</h1>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+			<p class="justify px-lg-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
 				Possimus vero quam voluptatem eius quidem ipsum vel nesciunt 
 				ipsam, doloribus at est, odio magnam tenetur, itaque harum asperiores non laboriosam ullam?
 				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid autem assumenda qui perferendis voluptatem temporibus amet beatae ab veniam odit harum deserunt, ex consectetur ut natus officiis, eius veritatis dolorum.
@@ -74,25 +74,51 @@
 	<!-- section nav -->
 	<div class="row">
 		<ul class="nav nav-tabs bg-orange nav-fill">
-			<li class="nav-item">
+			<li class="nav-item sec">
 				<a class="nav-link rounded-0" aria-current="page" href="{% url 'd-cse' %}">News</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item sec">
 				<a class="nav-link rounded-0 bg-dark active" aria-current="page" href="">Events</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item sec">
 				<a class="nav-link rounded-0" aria-current="page" href="#">Teachers</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item sec">
 				<a class="nav-link rounded-0" aria-current="page" href="#">Achievements</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item sec">
 				<a class="nav-link rounded-0" aria-current="page" href="#">Syllabus</a>
 			</li>
 		</ul>
 	</div>
 	
-
+	<center>
+		<div class="row pt-4">
+			<div class="col-12">
+				<h3>Ongoing Events</h3>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+		{% for event in events %}
+			<div class="col-lg-3 col-12 pb-3">
+				<div class="card mt-3 lg-w-75 h-100">
+					<div class="img-max mx-auto pt-lg-3">
+						<img src="{{event.poster}}" class="card-img-top img-fluid rounded" alt="Event Poster">
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">{{event.title}}</h5>
+						<p class="card-text justify">{{event.description|linebreaks}}</p>
+					</div>
+					<div class="card-footer">
+						<p class="card-text"><small class="text-body-secondary">Last date to register: {{event.last_date}}</small></p>
+						<a href="{{event.google_form}}" class="btn btn-success">Register</a>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+		</div>
+	</center>
 
 
 

@@ -25,7 +25,7 @@
 		padding: 0px;
 		float:left;
 	}
-	a {
+	.sec {
 		text-decoration: none;
 		color: white!important;
 	}
@@ -62,7 +62,7 @@
 				<span class="orange">Department</span> of <br>
 				Computer Science <br>and <span class="orange">Engineering</span>
 			</h1>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+			<p class="justify px-lg-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
 				Possimus vero quam voluptatem eius quidem ipsum vel nesciunt 
 				ipsam, doloribus at est, odio magnam tenetur, itaque harum asperiores non laboriosam ullam?
 				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid autem assumenda qui perferendis voluptatem temporibus amet beatae ab veniam odit harum deserunt, ex consectetur ut natus officiis, eius veritatis dolorum.
@@ -75,19 +75,19 @@
 	<div class="row">
 		<ul class="nav nav-tabs bg-orange nav-fill">
 			<li class="nav-item">
-				<a class="nav-link rounded-0 bg-dark active" aria-current="page" href="">News</a>
+				<a class="nav-link rounded-0 bg-dark active sec" aria-current="page" href="">News</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link rounded-0" aria-current="page" href="{% url 'cse-events' %}">Events</a>
+				<a class="nav-link rounded-0 sec" aria-current="page" href="{% url 'cse-events' %}">Events</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link rounded-0" aria-current="page" href="#">Teachers</a>
+				<a class="nav-link rounded-0 sec" aria-current="page" href="#">Teachers</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link rounded-0" aria-current="page" href="#">Achievements</a>
+				<a class="nav-link rounded-0 sec" aria-current="page" href="#">Achievements</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link rounded-0" aria-current="page" href="#">Syllabus</a>
+				<a class="nav-link rounded-0 sec" aria-current="page" href="#">Syllabus</a>
 			</li>
 		</ul>
 	</div>
@@ -96,11 +96,11 @@
 	<center>
 		<div class="row">
 		{% for department in dept %}
-			<div class="col-lg-3 col-12 pb-3">
+			<div class="col-lg-2 col-12 pb-3">
 				<div class="card mt-3 lg-w-75 h-100">
 					<div class="img-max mx-auto pt-lg-3">
 						<a href="{% url 'cse-news' department.id %}">
-						<img src="{{department.image}}" class="card-img-top img-fluid rounded" alt="News Image">
+						<img src="{{department.poster}}" class="card-img-top img-fluid rounded" alt="News Image">
 						</a>
 					</div>
 					<div class="card-body">
@@ -108,7 +108,7 @@
 						<p class="card-text justify">{{department.description}}</p>
 					</div>
 					<div class="card-footer">
-						<p class="card-text"><small class="text-body-secondary">Updated on {{department.created|date}}</small></p>
+						<p class="card-text"><small class="text-body-secondary">Posted on {{department.created|date}}</small></p>
 					</div>
 				</div>
 			</div>
