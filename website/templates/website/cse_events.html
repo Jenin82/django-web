@@ -14,36 +14,13 @@
 		font-weight: 600;
 		font-size: 35px;
 	}
-	.col-md-6 {
-		float:none;
-		display:inline-block;
-	}
-	
-	.imageholder {
-		width: 50%;
-		margin: 0px auto;
-		padding: 0px;
-		float:left;
-	}
 	.sec a {
 		text-decoration: none;
 		color: white!important;
 	}
-	.white {
-		background-color: white;
-		color: black;
-	}
 	body{
 		background-color: #f8f9fa !important;
 	}
-	.img-max {
-		max-height: 20rem;
-	}
-	img{
-		width: 100%;
-		max-height: 18rem !important;;
-	}
-	
 </style>
 
 <div class="pb-5 outer" style="padding-top: 4rem;">
@@ -81,7 +58,7 @@
 				<a class="nav-link rounded-0 bg-dark active" aria-current="page" href="">Events</a>
 			</li>
 			<li class="nav-item sec">
-				<a class="nav-link rounded-0" aria-current="page" href="#">Teachers</a>
+				<a class="nav-link rounded-0" aria-current="page" href="{% url 'cse-teachers' %}">Teachers</a>
 			</li>
 			<li class="nav-item sec">
 				<a class="nav-link rounded-0" aria-current="page" href="#">Achievements</a>
@@ -99,24 +76,64 @@
 			</div>
 		</div>
 		<hr>
-		<div class="row">
-		{% for event in events %}
-			<div class="col-lg-3 col-12 pb-3">
-				<div class="card mt-3 lg-w-75 h-100">
-					<div class="img-max mx-auto pt-lg-3">
-						<img src="{{event.poster}}" class="card-img-top img-fluid rounded" alt="Event Poster">
-					</div>
-					<div class="card-body">
-						<h5 class="card-title">{{event.title}}</h5>
-						<p class="card-text justify">{{event.description|linebreaks}}</p>
-					</div>
-					<div class="card-footer">
-						<p class="card-text"><small class="text-body-secondary">Last date to register: {{event.last_date}}</small></p>
-						<a href="{{event.google_form}}" class="btn btn-success">Register</a>
+
+
+		<style>
+		.img-max .img-fit {
+				aspect-ratio: 1.45 / 1;
+				object-fit: cover;
+		}
+		.card, .img-max {
+				/* display: flex; */
+				height: 100%;
+				/* flex-direction: column; */
+				text-align: left !important;
+		}
+		.card-body {
+				display: flex;
+				height: 100%;
+				flex-direction: column;
+		}
+		.card-text {
+				/* flex: 1; */
+				flex-grow: 1;
+		}
+		@media (max-width: 767.98px) {
+				.img-max .img-fit {
+						aspect-ratio: 1.45 / 1;
+						object-fit: cover;
+				}
+		}
+		.img-max {
+			overflow: hidden;
+		}
+		.img-max img {
+			transition: all 1.5s ease;
+		}
+		.img-max:hover img {
+			transform: scale(1.15);
+		}
+		</style>
+		<div class="container">
+			<div class="row">
+			{% for event in events %}
+				<div class="col-lg-4 col-12 pb-3">
+					<div class="card mt-3 lg-w-75 h-100">
+						<div class="img-max">
+							<img src="{{event.poster}}" class="card-img-top img-fit img-fluid" alt="Event Poster">
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">{{event.title}}</h5>
+							<p class="text-start">{{event.description|linebreaks}}</p>
+						</div>
+						<div class="card-footer">
+							<p class="text-body-secondary">Last date to register: {{event.last_date}}</p>
+							<a href="{{event.google_form}}" class="btn btn-success">Register</a>
+						</div>
 					</div>
 				</div>
+			{% endfor %}
 			</div>
-		{% endfor %}
 		</div>
 	</center>
 

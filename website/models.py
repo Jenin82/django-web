@@ -1,8 +1,6 @@
 from django.db import models
 
-
 # Create your models here.
-
 
 class CseDepartment(models.Model):
   title = models.CharField(max_length=200)
@@ -41,3 +39,29 @@ class CseEvent(models.Model):
 
   def __str__(self):
     return self.title
+
+class CseTeacher(models.Model):
+  name = models.CharField(max_length=200)
+  profile_picture = models.CharField(max_length=300)
+  email = models.CharField(max_length=100)
+  qualification = models.TextField(max_length=200)
+  FACULTY = "F"
+  TECHNICAL_STAFF = "T"
+  ROLE_CHOICES = [
+		(FACULTY, "Faculty"),
+		(TECHNICAL_STAFF, "Technical Staff"),
+	]
+  role = models.CharField(
+		max_length = 1,
+		choices = ROLE_CHOICES,
+		default=FACULTY,
+	)
+  experience = models.TextField(max_length=400)
+  updated = models.DateTimeField(auto_now=True)
+  created = models.DateTimeField(auto_now_add=True) 
+  
+  class Meta:
+    ordering = ['-updated', '-created']
+
+  def __str__(self):
+    return self.name

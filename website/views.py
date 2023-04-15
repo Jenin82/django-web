@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from website.models import CseDepartment, CseEvent
+from website.models import CseDepartment, CseEvent, CseTeacher
 
 # Create your views here.
 
@@ -55,3 +55,8 @@ def cse_events(request):
   events = CseEvent.objects.all()
   context = {'events' : events}
   return render(request, 'website/cse_events.html', context)
+
+def cse_teachers(request):
+  teachers = CseTeacher.objects.all()
+  context = {'teachers' : teachers}
+  return render(request, 'website/cse_teachers.html', context)
