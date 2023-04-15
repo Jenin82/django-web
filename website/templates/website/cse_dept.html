@@ -47,7 +47,7 @@
 		overflow: hidden;
 	}
 	.img-max img {
-		transition: all 1.5s ease;
+		transition: all 0.3s ease;
 	}
 	.img-max:hover img {
 		transform: scale(1.15);
@@ -102,27 +102,67 @@
 	
 
 	<center>
-		<div class="row">
-		{% for department in dept %}
-			<div class="col-lg-2 col-12 pb-3">
-				<div class="card mt-3 lg-w-75 h-100">
-					<div class="img-max mx-auto pt-lg-3">
-						<a href="{% url 'cse-news' department.id %}">
-						<img src="{{department.poster}}" class="card-img-top img-fluid rounded" alt="News Image">
-						</a>
+		<style>
+			.img-max .img-fit {
+					aspect-ratio: 1 / 1;
+					object-fit: cover;
+			}
+			.card, .img-max {
+					/* display: flex; */
+					height: 100%;
+					/* flex-direction: column; */
+					text-align: left !important;
+			}
+			.card-body {
+					display: flex;
+					height: 55%;
+					flex-direction: column;
+			}
+			.card-text {
+					/* flex: 1; */
+					flex-grow: 1;
+			}
+			@media (max-width: 767.98px) {
+					.img-max .img-fit {
+							aspect-ratio: 1 / 1;
+							object-fit: cover;
+					}
+			}
+			.img-max {
+				overflow: hidden;
+			}
+			.img-max img {
+				transition: all 0.3s ease;
+			}
+			.img-max:hover img {
+				transform: scale(1.15);
+			}
+			</style>
+			<div class="container">
+				<div class="row">
+				{% for department in dept %}
+					<div class="col-lg-4 col-12 pb-3">
+						<div class="card mt-3 lg-w-75 h-100">
+							<div class="img-max">
+								<a href="{% url 'cse-news' department.id %}">
+									<img src="{{department.poster}}" class="card-img-top img-fit img-fluid" alt="Event Poster">
+								</a>
+							</div>
+							<div class="card-body">
+								<h5 class="card-title">{{department.title}}</h5>
+								<p class="">{{department.description|linebreaks}}</p>
+							</div>
+							<div class="card-footer">
+								<p class="text-body-secondary">Posted on {{department.created|date}}</p>
+							</div>
+						</div>
 					</div>
-					<div class="card-body">
-						<h5 class="card-title">{{department.title}}</h5>
-						<p class="card-text justify">{{department.description}}</p>
-					</div>
-					<div class="card-footer">
-						<p class="card-text"><small class="text-body-secondary">Posted on {{department.created|date}}</small></p>
-					</div>
+				{% endfor %}
 				</div>
 			</div>
-		{% endfor %}
-		</div>
 	</center>
+
+
 
 
 
