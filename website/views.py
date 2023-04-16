@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from website.models import CseDepartment, CseEvent, CseTeacher
+from website.models import CseNews, CseEvent, CseTeacher
 
 # Create your views here.
 
@@ -41,14 +41,14 @@ def e_eee(request):
   return render(request, 'website/e-eee.html', context)
 
 def cse_dept(request):
-  dept = CseDepartment.objects.all()
+  dept = CseNews.objects.all()
   context = { 'dept' : dept}
   return render(request, 'website/cse_dept.html', context)
 
 def cse_news(request, pk):
-  cseDepartment = CseDepartment.objects.get(id=pk)
-  images = cseDepartment.images.all().order_by('-created')
-  context = {'news' : cseDepartment, 'newsImages' : images}
+  cseNews = CseNews.objects.get(id=pk)
+  images = cseNews.images.all().order_by('-created')
+  context = {'news' : cseNews, 'newsImages' : images}
   return render(request, 'website/cse_news.html', context)
 
 def cse_events(request):
