@@ -16,6 +16,7 @@ urlpatterns = [
     path('cse_news/<str:pk>/', views.cse_news, name="cse-news"),
     path('cse_events/', views.cse_events, name="cse-events"),
     path('cse_teachers/', views.cse_teachers, name="cse-teachers"),
+    path('cse_achievements/', views.cse_achievements, name="cse-achievements"),
     
 ]
 

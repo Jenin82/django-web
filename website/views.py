@@ -60,3 +60,8 @@ def cse_teachers(request):
   teachers = CseTeacher.objects.all()
   context = {'teachers' : teachers}
   return render(request, 'website/cse_teachers.html', context)
+
+def cse_achievements(request):
+  events = CseEvent.objects.all()
+  context = {'events' : events}
+  return render(request, 'website/cse_achievements.html', context)

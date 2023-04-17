@@ -55,13 +55,13 @@
 				<a class="nav-link rounded-0" aria-current="page" href="{% url 'd-cse' %}">News</a>
 			</li>
 			<li class="nav-item sec dark-hover">
-				<a class="nav-link rounded-0 bg-dark active" aria-current="page" href="">Events</a>
+				<a class="nav-link rounded-0" aria-current="page" href="{% url 'cse-events' %}">Events</a>
 			</li>
 			<li class="nav-item sec dark-hover">
 				<a class="nav-link rounded-0" aria-current="page" href="{% url 'cse-teachers' %}">Teachers</a>
 			</li>
 			<li class="nav-item sec dark-hover">
-				<a class="nav-link rounded-0" aria-current="page" href="{% url 'cse-achievements' %}">Achievements</a>
+				<a class="nav-link rounded-0 bg-dark active" aria-current="page" href="">Achievements</a>
 			</li>
 			<li class="nav-item sec dark-hover">
 				<a class="nav-link rounded-0" aria-current="page" href="#">Syllabus</a>
@@ -72,15 +72,16 @@
 	<center>
 		<div class="row pt-4">
 			<div class="col-12">
-				<h3>Ongoing Events</h3>
+				<h3>Achievements</h3>
 			</div>
 		</div>
 		<hr>
+	</center>
 
 
 		<style>
 		.img-max .img-fit {
-				aspect-ratio: 1 / 1;
+				aspect-ratio: 16 / 9;
 				object-fit: cover;
 		}
 		.card, .img-max {
@@ -100,7 +101,7 @@
 		}
 		@media (max-width: 767.98px) {
 				.img-max .img-fit {
-						aspect-ratio: 1 / 1;
+						aspect-ratio: 1.45 / 1;
 						object-fit: cover;
 				}
 		}
@@ -115,27 +116,25 @@
 		}
 		</style>
 		<div class="container">
-			<div class="row">
+			<div class="row g-3">
 			{% for event in events %}
-				<div class="col-lg-4 col-12 pb-3">
+				<div class="col-lg-6 col-12">
 					<div class="card mt-3 lg-w-75 h-100">
 						<div class="img-max">
-							<img src="{{event.poster}}" class="card-img-top img-fit img-fluid" alt="Event Poster">
+							<img src="{{event.poster}}" class="card-img-top img-fit img-fluid" alt="">
 						</div>
 						<div class="card-body">
 							<h5 class="card-title">{{event.title}}</h5>
 							<p class="">{{event.description|linebreaks}}</p>
 						</div>
 						<div class="card-footer">
-							<p class="text-body-secondary">Last date to register: {{event.last_date}}</p>
-							<a href="{{event.google_form}}" class="btn btn-success">Register</a>
+							<p class="text-body-secondary">Posted on: {{event.created|date}}</p>
 						</div>
 					</div>
 				</div>
 			{% endfor %}
 			</div>
 		</div>
-	</center>
 
 
 
