@@ -21,8 +21,11 @@
 	body{
 		background-color: #f8f9fa !important;
 	}
-	.img-fit {
+	.img-fit, .dark-hover {
 		transition: all 0.3s;
+	}
+	.dark-hover:hover {
+		background-color: #212529 !important;
 	}
 	.img-fit:hover{
 		transform: scale(0.85);
@@ -57,19 +60,19 @@
 	<!-- section nav -->
 	<div class="row">
 		<ul class="nav nav-tabs bg-orange nav-fill">
-			<li class="nav-item sec">
+			<li class="nav-item sec dark-hover">
 				<a class="nav-link rounded-0" aria-current="page" href="{% url 'd-cse' %}">News</a>
 			</li>
-			<li class="nav-item sec">
+			<li class="nav-item sec dark-hover">
 				<a class="nav-link rounded-0" aria-current="page" href="{% url 'cse-events' %}">Events</a>
 			</li>
-			<li class="nav-item sec">
+			<li class="nav-item sec dark-hover">
 				<a class="nav-link rounded-0 bg-dark active" aria-current="page" href="">Teachers</a>
 			</li>
-			<li class="nav-item sec">
+			<li class="nav-item sec dark-hover">
 				<a class="nav-link rounded-0" aria-current="page" href="#">Achievements</a>
 			</li>
-			<li class="nav-item sec">
+			<li class="nav-item sec dark-hover">
 				<a class="nav-link rounded-0" aria-current="page" href="#">Syllabus</a>
 			</li>
 		</ul>
