@@ -117,18 +117,18 @@
 		</style>
 		<div class="container">
 			<div class="row g-3">
-			{% for event in events %}
+			{% for item in achievements %}
 				<div class="col-lg-6 col-12">
 					<div class="card mt-3 lg-w-75 h-100">
 						<div class="img-max">
-							<img src="{{event.poster}}" class="card-img-top img-fit img-fluid" alt="">
+							<img src="{{item.image}}" class="card-img-top img-fit img-fluid" alt="">
 						</div>
 						<div class="card-body">
-							<h5 class="card-title">{{event.title}}</h5>
-							<p class="">{{event.description|linebreaks}}</p>
+							<h5 class="card-title">{{item.title}}</h5>
+							<p class="">{{item.description|linebreaks}}</p>
 						</div>
 						<div class="card-footer">
-							<p class="text-body-secondary">Posted on: {{event.created|date}}</p>
+							<p class="text-body-secondary">Posted on: {{item.created|date}}</p>
 						</div>
 					</div>
 				</div>

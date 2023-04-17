@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from website.models import CseNews, CseEvent, CseTeacher
+from website.models import CseAchievement, CseNews, CseEvent, CseTeacher
 
 # Create your views here.
 
@@ -62,6 +62,6 @@ def cse_teachers(request):
   return render(request, 'website/cse_teachers.html', context)
 
 def cse_achievements(request):
-  events = CseEvent.objects.all()
-  context = {'events' : events}
+  achievements = CseAchievement.objects.all()
+  context = {'achievements' : achievements}
   return render(request, 'website/cse_achievements.html', context)
