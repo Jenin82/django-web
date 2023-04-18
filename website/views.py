@@ -5,7 +5,8 @@ from website.models import CseAchievement, CseNews, CseEvent, CseTeacher
 # Create your views here.
 
 def home(request):
-  context = {}
+  number = 1000
+  context = {'number': number}
   return render(request, 'website/home.html', context)
 
 def btech(request):
