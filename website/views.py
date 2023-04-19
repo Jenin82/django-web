@@ -97,3 +97,9 @@ def civil_dept(request):
   dept = CivilNews.objects.all()
   context = { 'dept' : dept}
   return render(request, 'website/civil_dept.html', context)
+
+def civil_news(request, pk):
+  civilNews = CivilNews.objects.get(id=pk)
+  images = civilNews.civilimages.all().order_by('-created')
+  context = {'news' : civilNews, 'newsImages' : images}
+  return render(request, 'website/civil_news.html', context)
