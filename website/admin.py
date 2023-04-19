@@ -24,3 +24,4 @@ admin.site.register(CivilEvent)
 
 admin.site.register(EeeNews)
 admin.site.register(EeeNewsImage)
+admin.site.register(EeeEvent)

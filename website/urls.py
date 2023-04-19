@@ -32,7 +32,7 @@ urlpatterns = [
 
     path('eee_dept/', views.eee_dept, name="d-eee"),
     path('eee_news/<str:pk>/', views.eee_news, name="eee-news"),
-    path('eee_events/', views.mech_events, name="mech-events"),
+    path('eee_events/', views.eee_events, name="eee-events"),
     path('eee_teachers/', views.mech_teachers, name="mech-teachers"),
     path('eee_achievements/', views.mech_achievements, name="mech-achievements"),
 

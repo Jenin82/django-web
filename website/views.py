@@ -127,3 +127,8 @@ def eee_news(request, pk):
   images = eeeNews.eeeimages.all().order_by('-created')
   context = {'news' : eeeNews, 'newsImages' : images}
   return render(request, 'website/eee_news.html', context)
+
+def eee_events(request):
+  events = EeeEvent.objects.all()
+  context = {'events' : events}
+  return render(request, 'website/eee_events.html', context)
