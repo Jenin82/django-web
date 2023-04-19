@@ -22,9 +22,6 @@ admin.site.register(CivilEvent)
 admin.site.register(CivilTeacher)
 admin.site.register(CivilAchievement)
 
-
-
-
 admin.site.register(EeeNews)
 admin.site.register(EeeNewsImage)
 admin.site.register(EeeEvent)
