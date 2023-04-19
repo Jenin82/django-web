@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from website.models import CivilNews, CseAchievement, CseNews, CseEvent, CseTeacher, EeeNews, MechNews, MechAchievement, MechEvent, MechTeacher
+from website.models import CivilEvent, CivilNews, CseAchievement, CseNews, CseEvent, CseTeacher, EeeNews, MechNews, MechAchievement, MechEvent, MechTeacher
 
 # Create your views here.
 
@@ -104,6 +104,10 @@ def civil_news(request, pk):
   context = {'news' : civilNews, 'newsImages' : images}
   return render(request, 'website/civil_news.html', context)
 
+def civil_events(request):
+  events = CivilEvent.objects.all()
+  context = {'events' : events}
+  return render(request, 'website/civil_events.html', context)
 
 
 
