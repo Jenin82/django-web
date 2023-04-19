@@ -1,0 +1,183 @@
+{% extends 'website/main.html' %}
+
+{% block content %}
+
+<style>
+	.orange {
+		color: orange;
+	}
+	.bg-orange {
+		background-color: orange!important;
+	}
+	.dept_title {
+		font-family: 'Exo 2', sans-serif;
+		font-weight: 600;
+		font-size: 35px;
+	}
+	.col-md-6 {
+		float:none;
+		display:inline-block;
+	}
+	
+	.imageholder {
+		width: 50%;
+		margin: 0px auto;
+		padding: 0px;
+		float:left;
+	}
+	.sec {
+		text-decoration: none;
+		color: white!important;
+	}
+	.white {
+		background-color: white;
+		color: black;
+	}
+	body{
+		background-color: #f8f9fa !important;
+	}
+	.img-max {
+		max-height: 20rem;
+	}
+	img{
+		width: 100%;
+		max-height: 18rem !important;;
+	}
+	.img-max {
+		overflow: hidden;
+	}
+	.img-max img {
+		transition: all 0.3s ease;
+	}
+	.img-max:hover img {
+		transform: scale(1.15);
+	}
+</style>
+
+<div class="pb-3 outer" style="padding-top: 4rem;">
+	
+	<!-- top small nav -->
+	<div class="row bg-orange">
+		<div class="col-12 pt-3 pb-1">
+			<h6>Sree Narayana Guru Institute of Science and Technology</h6>
+		</div>
+	</div>
+
+	<div class="row bg-light pb-3">
+		<div class="col-12 pt-3">
+			<center>
+			<h1 class="dept_title pb-1">
+				<span class="orange">Department</span> of <br>
+				Electrical<br>and Electronics<span class="orange">Engineering</span>
+			</h1>
+			<p class="justify px-lg-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+				Possimus vero quam voluptatem eius quidem ipsum vel nesciunt 
+				ipsam, doloribus at est, odio magnam tenetur, itaque harum asperiores non laboriosam ullam?
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid autem assumenda qui perferendis voluptatem temporibus amet beatae ab veniam odit harum deserunt, ex consectetur ut natus officiis, eius veritatis dolorum.
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae odit, reprehenderit dignissimos dolor sapiente fuga doloribus molestiae eligendi reiciendis sit. Quaerat inventore sapiente illum repellendus consequuntur neque obcaecati nisi nesciunt!
+			</p>
+			</center>
+		</div>
+	</div>
+	<!-- section nav -->
+	<div class="row">
+		<div class="col-12">
+			<ul class="nav nav-tabs bg-orange nav-fill">
+				<li class="nav-item">
+					<a class="nav-link rounded-0 bg-dark active sec dark-hover" aria-current="page" href="">News</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link rounded-0 sec dark-hover" aria-current="page" href="{% url 'mech-events' %}">Events</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link rounded-0 sec dark-hover" aria-current="page" href="{% url 'mech-teachers' %}">Teachers</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link rounded-0 sec dark-hover" aria-current="page" href="{% url 'mech-achievements' %}">Achievements</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<center>
+		<div class="row pt-4">
+			<div class="col-12">
+				<h3>Latest News</h3>
+			</div>
+		</div>
+		<hr>
+	</center>
+
+	<center>
+		<style>
+			.img-max .img-fit {
+					aspect-ratio: 1 / 1;
+					object-fit: cover;
+			}
+			.card, .img-max {
+					/* display: flex; */
+					height: 100%;
+					/* flex-direction: column; */
+					text-align: left !important;
+			}
+			.card-body {
+					display: flex;
+					height: 55%;
+					flex-direction: column;
+			}
+			.card-text {
+					/* flex: 1; */
+					flex-grow: 1;
+			}
+			@media (max-width: 767.98px) {
+					.img-max .img-fit {
+							aspect-ratio: 1 / 1;
+							object-fit: cover;
+					}
+			}
+			.img-max {
+				overflow: hidden;
+			}
+			.img-max img {
+				transition: all 0.3s ease;
+			}
+			.img-max:hover img {
+				transform: scale(1.15);
+			}
+			</style>
+			<div class="container">
+				<div class="row">
+				{% for department in dept %}
+					<div class="col-lg-4 col-12 pb-3">
+						<div class="card mt-3 lg-w-75 h-100">
+							<div class="img-max">
+								<a href="{% url 'mech-news' department.id %}">
+									<img src="{{department.poster}}" class="card-img-top img-fit img-fluid" alt="Event Poster">
+								</a>
+							</div>
+							<div class="card-body justify">
+								<h5 class="card-title">{{department.title}}</h5>
+								<p class="">{{department.description|linebreaks}}</p>
+							</div>
+							<div class="card-footer">
+								<p class="text-body-secondary">Posted on {{department.created|date}}</p>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+				</div>
+			</div>
+	</center>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+{% endblock %}

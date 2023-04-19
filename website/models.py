@@ -150,3 +150,17 @@ class CivilNews(models.Model):
 
   def __str__(self):
     return self.title
+  
+class EeeNews(models.Model):
+  title = models.CharField(max_length=200)
+  poster = models.CharField(max_length=300)
+  description = models.TextField(max_length=500)
+  body = models.TextField()
+  updated = models.DateTimeField(auto_now=True)
+  created = models.DateTimeField(auto_now_add=True) 
+  
+  class Meta:
+    ordering = ['-updated', '-created']
+
+  def __str__(self):
+    return self.title

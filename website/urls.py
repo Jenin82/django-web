@@ -30,6 +30,13 @@ urlpatterns = [
     path('civil_teachers/', views.mech_teachers, name="mech-teachers"),
     path('civil_achievements/', views.mech_achievements, name="mech-achievements"),
 
+    path('eee_dept/', views.eee_dept, name="d-eee"),
+    path('eee_news/<str:pk>/', views.mech_news, name="mech-news"),
+    path('eee_events/', views.mech_events, name="mech-events"),
+    path('eee_teachers/', views.mech_teachers, name="mech-teachers"),
+    path('eee_achievements/', views.mech_achievements, name="mech-achievements"),
+
+
     
     
 ]
