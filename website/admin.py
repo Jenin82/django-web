@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import CivilEvent, CivilNews, CivilNewsImage, CseAchievement, CseNews, CseNewsImage, CseEvent, CseTeacher, EeeNews, EeeNewsImage, MechAchievement, MechEvent, MechNews, MechNewsImage, MechTeacher
+from .models import CivilEvent, CivilNews, CivilNewsImage, CseAchievement, CseNews, CseNewsImage, CseEvent, CseTeacher, EeeEvent, EeeNews, EeeNewsImage, MechAchievement, MechEvent, MechNews, MechNewsImage, MechTeacher
 
 admin.site.register(CseNews)
 admin.site.register(CseNewsImage)

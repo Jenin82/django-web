@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from website.models import CivilEvent, CivilNews, CseAchievement, CseNews, CseEvent, CseTeacher, EeeNews, MechNews, MechAchievement, MechEvent, MechTeacher
+from website.models import CivilEvent, CivilNews, CseAchievement, CseNews, CseEvent, CseTeacher, EeeEvent, EeeNews, MechNews, MechAchievement, MechEvent, MechTeacher
 
 # Create your views here.
 
