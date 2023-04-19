@@ -114,3 +114,12 @@ def eee_dept(request):
   dept = EeeNews.objects.all()
   context = { 'dept' : dept}
   return render(request, 'website/eee_dept.html', context)
+
+
+
+
+def eee_news(request, pk):
+  eeeNews = EeeNews.objects.get(id=pk)
+  images = eeeNews.eeeimages.all().order_by('-created')
+  context = {'news' : eeeNews, 'newsImages' : images}
+  return render(request, 'website/eee_news.html', context)
