@@ -68,3 +68,26 @@ class CseAchievement(models.Model):
 
   def __str__(self):
     return self.title
+  
+class MechNews(models.Model):
+  title = models.CharField(max_length=200)
+  poster = models.CharField(max_length=300)
+  description = models.TextField(max_length=500)
+  body = models.TextField()
+  updated = models.DateTimeField(auto_now=True)
+  created = models.DateTimeField(auto_now_add=True) 
+  
+  class Meta:
+    ordering = ['-updated', '-created']
+
+  def __str__(self):
+    return self.title
+  
+class MechNewsImage(models.Model):
+	mechDepartment = models.ForeignKey(MechNews, on_delete=models.CASCADE, related_name="mechimages")
+	image = models.CharField(max_length=300,  null=True, blank=True)
+	updated = models.DateTimeField(auto_now=True)
+	created = models.DateTimeField(auto_now_add=True)
+	
+	def __str__(self):
+		return self.image[0:50]

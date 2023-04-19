@@ -18,5 +18,11 @@ urlpatterns = [
     path('cse_teachers/', views.cse_teachers, name="cse-teachers"),
     path('cse_achievements/', views.cse_achievements, name="cse-achievements"),
     
+    path('mech_dept/', views.mech_dept, name="d-mech"),
+    path('mech_news/<str:pk>/', views.mech_news, name="mech-news"),
+    path('mech_events/', views.cse_events, name="cse-events"),
+    path('mech_teachers/', views.cse_teachers, name="cse-teachers"),
+    path('mech_achievements/', views.cse_achievements, name="cse-achievements"),
+    
 ]
 
