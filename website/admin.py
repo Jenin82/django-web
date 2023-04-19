@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import CseAchievement, CseNews, CseNewsImage, CseEvent, CseTeacher, MechAchievement, MechEvent, MechNews, MechNewsImage, MechTeacher
+from .models import CivilNews, CseAchievement, CseNews, CseNewsImage, CseEvent, CseTeacher, MechAchievement, MechEvent, MechNews, MechNewsImage, MechTeacher
 
 admin.site.register(CseNews)
 admin.site.register(CseNewsImage)
@@ -16,3 +16,4 @@ admin.site.register(MechEvent)
 admin.site.register(MechTeacher)
 admin.site.register(MechAchievement)
 
+admin.site.register(CivilNews)

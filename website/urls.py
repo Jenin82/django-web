@@ -23,6 +23,14 @@ urlpatterns = [
     path('mech_events/', views.mech_events, name="mech-events"),
     path('mech_teachers/', views.mech_teachers, name="mech-teachers"),
     path('mech_achievements/', views.mech_achievements, name="mech-achievements"),
+
+    path('civil_dept/', views.civil_dept, name="d-civil"),
+    path('civil_news/<str:pk>/', views.mech_news, name="mech-news"),
+    path('civil_events/', views.mech_events, name="mech-events"),
+    path('civil_teachers/', views.mech_teachers, name="mech-teachers"),
+    path('civil_achievements/', views.mech_achievements, name="mech-achievements"),
+
+    
     
 ]
 
