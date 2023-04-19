@@ -160,7 +160,20 @@ class CivilNewsImage(models.Model):
 	def __str__(self):
 		return self.image[0:50]
 
+class CivilEvent(models.Model):
+  title = models.CharField(max_length=200)
+  poster = models.CharField(max_length=300)
+  description = models.TextField(max_length=300)
+  last_date = models.CharField(max_length=50)
+  google_form = models.CharField(max_length=300, null=True, blank=True)
+  updated = models.DateTimeField(auto_now=True)
+  created = models.DateTimeField(auto_now_add=True) 
+  
+  class Meta:
+    ordering = ['-updated', '-created']
 
+  def __str__(self):
+    return self.title
 
 
 
