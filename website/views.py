@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from website.models import CseAchievement, CseNews, CseEvent, CseTeacher, MechNews
+from website.models import CseAchievement, CseNews, CseEvent, CseTeacher, MechNews, MechAchievement, MechEvent, MechTeacher
 
 # Create your views here.
 
@@ -77,3 +77,18 @@ def mech_news(request, pk):
   images = mechNews.mechimages.all().order_by('-created')
   context = {'news' : mechNews, 'newsImages' : images}
   return render(request, 'website/mech_news.html', context)
+
+def mech_events(request):
+  events = MechEvent.objects.all()
+  context = {'events' : events}
+  return render(request, 'website/mech_events.html', context)
+
+def mech_teachers(request):
+  teachers = MechTeacher.objects.all()
+  context = {'teachers' : teachers}
+  return render(request, 'website/mech_teachers.html', context)
+
+def mech_achievements(request):
+  achievements = MechAchievement.objects.all()
+  context = {'achievements' : achievements}
+  return render(request, 'website/mech_achievements.html', context)
