@@ -27,7 +27,7 @@ urlpatterns = [
     path('civil_dept/', views.civil_dept, name="d-civil"),
     path('civil_news/<str:pk>/', views.civil_news, name="civil-news"),
     path('civil_events/', views.civil_events, name="civil-events"),
-    path('civil_teachers/', views.mech_teachers, name="mech-teachers"),
+    path('civil_teachers/', views.civil_teachers, name="civil-teachers"),
     path('civil_achievements/', views.mech_achievements, name="mech-achievements"),
 
     path('eee_dept/', views.eee_dept, name="d-eee"),
