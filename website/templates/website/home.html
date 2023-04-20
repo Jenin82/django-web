@@ -305,16 +305,17 @@
 			</div>
 		</div>
 
-			<!-- Off-Canvas -->
-			<div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
-				<div class="offcanvas-header bg-warning">
-					<h5 class="offcanvas-title" id="offcanvasBottomLabel">SNGIST Group of Institutions</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-				</div>
-				<div class="offcanvas-body">
-					<!-- below bottom heading -->
+		<!-- Off-Canvas -->
+		<div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+			<div class="offcanvas-header bg-warning">
+				<h5 class="offcanvas-title" id="offcanvasBottomLabel">SNGIST Group of Institutions</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			</div>
+			<div class="offcanvas-body">
+				<!-- below bottom heading -->
+				<div class="container">
 					<div class="row">
-						<div class="col-12 px-5 pt-2">
+						<div class="col-12 pt-2">
 							<p class="text-center justify">SNGIST was established in the year 2003 by Guru Deva Trust as part of its vision 
 								to create centers of excellence in higher learning. The college has excellent pool of faculty 
 								members with academic and research experience. Our vision is to ensure a holistic transformation 
@@ -325,21 +326,140 @@
 						</div>
 					</div>
 
-					<!-- spacing -->
-					<div class="row pt-4 pb-4 body">
-						<div class="col-12">
+
+					<style>
+						.img-max .img-fit {
+							aspect-ratio: 1 / 1;
+							object-fit: cover;
+						}
+						.img-wide-max .img-fit {
+							aspect-ratio: 16 / 9;
+							object-fit: cover;
+							height: 100% !important;
+						}
+						.card {
+							max-height: 23rem !important;
+						}
+						.img-max, .img-wide-max {
+								/* display: flex; */
+								height: 100%;
+								/* flex-direction: column; */
+								text-align: left !important;
+						}
+						@media (max-width: 767.98px) {
+								.img-max .img-fit, .img-wide-max .img-fit {
+										aspect-ratio: 1 / 1;
+										object-fit: cover;
+								}
+						}
+						.img-max, .img-wide-max {
+							overflow: hidden;
+						}
+						.img-max img, .img-wide-max img {
+							transition: all 0.3s ease;
+						}
+						.img-max:hover img, .img-wide-max:hover img {
+							transform: scale(1.15);
+						}
+					</style>
+					<div class="row">
+
+						<div class="col-lg-3 col-12 pb-3">
+							<div class="card mt-3">
+								<div class="img-max">
+									<a href="">
+										<img src="https://dailynexus.s3.us-west-1.amazonaws.com/dailynexus/wp-content/uploads/2021/03/15181042/aot.jpg" class="card-img-top img-fit img-fluid" alt="Event Poster">
+									</a>
+								</div>
+								<div class="card-body">
+									<h5 class="card-title">Test News</h5>
+								</div>
+								
+							</div>
 						</div>
+						
+						<div class="col-lg-3 col-12 pb-3">
+							<div class="card mt-3">
+								<div class="img-max">
+									<a href="">
+										<img src="https://dailynexus.s3.us-west-1.amazonaws.com/dailynexus/wp-content/uploads/2021/03/15181042/aot.jpg" class="card-img-top img-fit img-fluid" alt="Event Poster">
+									</a>
+								</div>
+								<div class="card-body">
+									<h5 class="card-title">Test News</h5>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-lg-6 col-12 pb-3">
+							<div class="card mt-3">
+								<div class="img-wide-max">
+									<a href="">
+										<img src="https://dailynexus.s3.us-west-1.amazonaws.com/dailynexus/wp-content/uploads/2021/03/15181042/aot.jpg" class="card-img img-fit img-fluid" alt="Event Poster">
+									</a>
+								</div>
+								<div class="card-body">
+									<h5 class="card-title">Test News</h5>
+								</div>
+							</div>
+						</div>
+
 					</div>
-
 					
-					{% include 'website/footer.html' %}
+					<div class="row">
+
+						<div class="col-lg-6 col-12 pb-3">
+							<div class="card mt-3">
+								<div class="img-wide-max">
+									<a href="">
+										<img src="https://dailynexus.s3.us-west-1.amazonaws.com/dailynexus/wp-content/uploads/2021/03/15181042/aot.jpg" class="card-img img-fit img-fluid" alt="Event Poster">
+									</a>
+								</div>
+								<div class="card-body">
+									<h5 class="card-title">Test News</h5>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-12 pb-3">
+							<div class="card mt-3">
+								<div class="img-max">
+									<a href="">
+										<img src="https://dailynexus.s3.us-west-1.amazonaws.com/dailynexus/wp-content/uploads/2021/03/15181042/aot.jpg" class="card-img-top img-fit img-fluid" alt="Event Poster">
+									</a>
+								</div>
+								<div class="card-body">
+									<h5 class="card-title">Test News</h5>
+								</div>
+								
+							</div>
+						</div>
+						
+						<div class="col-lg-3 col-12 pb-3">
+							<div class="card mt-3">
+								<div class="img-max">
+									<a href="">
+										<img src="https://dailynexus.s3.us-west-1.amazonaws.com/dailynexus/wp-content/uploads/2021/03/15181042/aot.jpg" class="card-img-top img-fit img-fluid" alt="Event Poster">
+									</a>
+								</div>
+								<div class="card-body">
+									<h5 class="card-title">Test News</h5>
+								</div>
+							</div>
+						</div>
+						
+					</div>
 				</div>
+				
+
+				<!-- spacing -->
+				<div class="row pt-4 pb-4 body">
+					<div class="col-12">
+					</div>
+				</div>
+
 			</div>
-
-			
-			
-			
-
+		</div>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
 </body>
