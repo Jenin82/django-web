@@ -9,6 +9,12 @@ def home(request):
   context = { 'news' : news}
   return render(request, 'website/home.html', context)
 
+def college_news(request, pk):
+  collegeNews = CollegeNews.objects.get(id=pk)
+  images = collegeNews.collegeimages.all().order_by('-created')
+  context = {'news' : collegeNews, 'newsImages' : images}
+  return render(request, 'website/college_news.html', context)
+
 def btech(request):
   context = {}
   return render(request, 'website/btech.html', context)

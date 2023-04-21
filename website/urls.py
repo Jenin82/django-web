@@ -50,6 +50,7 @@ urlpatterns = [
     path('mca_teachers/', views.mca_teachers, name="mca-teachers"),
     path('mca_achievements/', views.mca_achievements, name="mca-achievements"),
 
+    path('college_news/<str:pk>/', views.college_news, name="college-news"),
     
 ]
 

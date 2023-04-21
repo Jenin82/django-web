@@ -426,3 +426,12 @@ class CollegeNews(models.Model):
 
   def __str__(self):
     return self.title
+  
+class CollegeNewsImage(models.Model):
+	collegeNews = models.ForeignKey(CollegeNews, on_delete=models.CASCADE, related_name="collegeimages")
+	image = models.CharField(max_length=300, null=True, blank=True)
+	updated = models.DateTimeField(auto_now=True)
+	created = models.DateTimeField(auto_now_add=True)
+	
+	def __str__(self):
+		return self.image[0:50]
