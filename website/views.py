@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from website.models import CivilAchievement, CivilEvent, CivilNews, CivilTeacher, CseAchievement, CseNews, CseEvent, CseTeacher, EeeEvent, EeeNews, EeeTeacher, MechNews, MechAchievement, MechEvent, MechTeacher
+from website.models import BshAchievement, BshEvent, BshNews, BshTeacher, CivilAchievement, CivilEvent, CivilNews, CivilTeacher, CseAchievement, CseNews, CseEvent, CseTeacher, EeeEvent, EeeNews, EeeTeacher, MechNews, MechAchievement, MechEvent, MechTeacher
 
 # Create your views here.
 
@@ -145,3 +145,30 @@ def eee_teachers(request):
   teachers = EeeTeacher.objects.all()
   context = {'teachers' : teachers}
   return render(request, 'website/eee_teachers.html', context)
+
+
+def bsh_dept(request):
+  dept = BshNews.objects.all()
+  context = { 'dept' : dept}
+  return render(request, 'website/bsh_dept.html', context)
+
+def bsh_news(request, pk):
+  bshNews = BshNews.objects.get(id=pk)
+  images = bshNews.bshimages.all().order_by('-created')
+  context = {'news' : bshNews, 'newsImages' : images}
+  return render(request, 'website/bsh_news.html', context)
+
+def bsh_events(request):
+  events = BshEvent.objects.all()
+  context = {'events' : events}
+  return render(request, 'website/bsh_events.html', context)
+
+def bsh_teachers(request):
+  teachers = BshTeacher.objects.all()
+  context = {'teachers' : teachers}
+  return render(request, 'website/bsh_teachers.html', context)
+
+def bsh_achievements(request):
+  achievements = BshAchievement.objects.all()
+  context = {'achievements' : achievements}
+  return render(request, 'website/bsh_achievements.html', context)
