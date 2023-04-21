@@ -1,12 +1,12 @@
 from django.shortcuts import render
 
-from website.models import BshAchievement, BshEvent, BshNews, BshTeacher, CivilAchievement, CivilEvent, CivilNews, CivilTeacher, CseAchievement, CseNews, CseEvent, CseTeacher, EeeAchievement, EeeEvent, EeeNews, EeeTeacher, McaAchievement, McaEvent, McaNews, McaTeacher, MechNews, MechAchievement, MechEvent, MechTeacher
+from website.models import BshAchievement, BshEvent, BshNews, BshTeacher, CivilAchievement, CivilEvent, CivilNews, CivilTeacher, CollegeNews, CseAchievement, CseNews, CseEvent, CseTeacher, EeeAchievement, EeeEvent, EeeNews, EeeTeacher, McaAchievement, McaEvent, McaNews, McaTeacher, MechNews, MechAchievement, MechEvent, MechTeacher
 
 # Create your views here.
 
 def home(request):
-  number = 1000
-  context = {'number': number}
+  news = CollegeNews.objects.all()
+  context = { 'news' : news}
   return render(request, 'website/home.html', context)
 
 def btech(request):
