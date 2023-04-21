@@ -35,16 +35,16 @@
 	<div class="row bg-light pb-3">
 		<div class="col-12 pt-3">
 			<center>
-			<h1 class="dept_title pb-1">
-				<span class="orange">Department</span> of <br>
-				Basic Science <br>and <span class="orange">Humanities</span>
-			</h1>
-			<p class="justify px-lg-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-				Possimus vero quam voluptatem eius quidem ipsum vel nesciunt 
-				ipsam, doloribus at est, odio magnam tenetur, itaque harum asperiores non laboriosam ullam?
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid autem assumenda qui perferendis voluptatem temporibus amet beatae ab veniam odit harum deserunt, ex consectetur ut natus officiis, eius veritatis dolorum.
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae odit, reprehenderit dignissimos dolor sapiente fuga doloribus molestiae eligendi reiciendis sit. Quaerat inventore sapiente illum repellendus consequuntur neque obcaecati nisi nesciunt!
-			</p>
+				<h1 class="dept_title pb-1">
+					<span class="orange">Department</span> of <br>
+					Masters in <br><span class="orange">Computer Applications</span>
+				</h1>
+				<p class="justify px-lg-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+					Possimus vero quam voluptatem eius quidem ipsum vel nesciunt 
+					ipsam, doloribus at est, odio magnam tenetur, itaque harum asperiores non laboriosam ullam?
+					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid autem assumenda qui perferendis voluptatem temporibus amet beatae ab veniam odit harum deserunt, ex consectetur ut natus officiis, eius veritatis dolorum.
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae odit, reprehenderit dignissimos dolor sapiente fuga doloribus molestiae eligendi reiciendis sit. Quaerat inventore sapiente illum repellendus consequuntur neque obcaecati nisi nesciunt!
+				</p>
 			</center>
 		</div>
 	</div>
@@ -53,13 +53,13 @@
 		<div class="col-12">
 			<ul class="nav nav-tabs bg-orange nav-fill">
 				<li class="nav-item sec dark-hover">
-					<a class="nav-link rounded-0" aria-current="page" href="{% url 'd-bsh' %}">News</a>
+					<a class="nav-link rounded-0" aria-current="page" href="{% url 'd-mca' %}">News</a>
 				</li>
 				<li class="nav-item sec dark-hover">
-					<a class="nav-link rounded-0" aria-current="page" href="{% url 'bsh-events' %}">Events</a>
+					<a class="nav-link rounded-0" aria-current="page" href="{% url 'mca-events' %}">Events</a>
 				</li>
 				<li class="nav-item sec dark-hover">
-					<a class="nav-link rounded-0" aria-current="page" href="{% url 'bsh-teachers' %}">Teachers</a>
+					<a class="nav-link rounded-0" aria-current="page" href="{% url 'mca-teachers' %}">Teachers</a>
 				</li>
 				<li class="nav-item sec dark-hover">
 					<a class="nav-link rounded-0 bg-dark active" aria-current="page" href="">Achievements</a>
@@ -122,9 +122,9 @@
 						<div class="img-max">
 							<img src="{{item.image}}" class="card-img-top img-fit img-fluid" alt="">
 						</div>
-						<div class="card-body">
+						<div class="card-body justify">
 							<h5 class="card-title">{{item.title}}</h5>
-							<p class="">{{item.description|linebreaks}}</p>
+							<p class="justify">{{item.description|linebreaks}}</p>
 						</div>
 						<div class="card-footer">
 							<p class="text-body-secondary">Posted on: {{item.created|date}}</p>

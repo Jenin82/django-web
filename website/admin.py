@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import BshAchievement, BshEvent, BshNews, BshNewsImage, BshTeacher, CivilAchievement, CivilEvent, CivilNews, CivilNewsImage, CivilTeacher, CseAchievement, CseNews, CseNewsImage, CseEvent, CseTeacher, EeeEvent, EeeNews, EeeNewsImage, EeeTeacher, MechAchievement, MechEvent, MechNews, MechNewsImage, MechTeacher
+from .models import BshAchievement, BshEvent, BshNews, BshNewsImage, BshTeacher, CivilAchievement, CivilEvent, CivilNews, CivilNewsImage, CivilTeacher, CseAchievement, CseNews, CseNewsImage, CseEvent, CseTeacher, EeeAchievement, EeeEvent, EeeNews, EeeNewsImage, EeeTeacher, McaAchievement, McaEvent, McaNews, McaNewsImage, McaTeacher, MechAchievement, MechEvent, MechNews, MechNewsImage, MechTeacher
 
 admin.site.register(CseNews)
 admin.site.register(CseNewsImage)
@@ -26,6 +26,7 @@ admin.site.register(EeeNews)
 admin.site.register(EeeNewsImage)
 admin.site.register(EeeEvent)
 admin.site.register(EeeTeacher)
+admin.site.register(EeeAchievement)
 
 
 admin.site.register(BshNews)
@@ -33,3 +34,9 @@ admin.site.register(BshNewsImage)
 admin.site.register(BshEvent)
 admin.site.register(BshTeacher)
 admin.site.register(BshAchievement)
+
+admin.site.register(McaNews)
+admin.site.register(McaNewsImage)
+admin.site.register(McaEvent)
+admin.site.register(McaTeacher)
+admin.site.register(McaAchievement)

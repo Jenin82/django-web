@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from website.models import BshAchievement, BshEvent, BshNews, BshTeacher, CivilAchievement, CivilEvent, CivilNews, CivilTeacher, CseAchievement, CseNews, CseEvent, CseTeacher, EeeEvent, EeeNews, EeeTeacher, MechNews, MechAchievement, MechEvent, MechTeacher
+from website.models import BshAchievement, BshEvent, BshNews, BshTeacher, CivilAchievement, CivilEvent, CivilNews, CivilTeacher, CseAchievement, CseNews, CseEvent, CseTeacher, EeeAchievement, EeeEvent, EeeNews, EeeTeacher, McaAchievement, McaEvent, McaNews, McaTeacher, MechNews, MechAchievement, MechEvent, MechTeacher
 
 # Create your views here.
 
@@ -146,6 +146,11 @@ def eee_teachers(request):
   context = {'teachers' : teachers}
   return render(request, 'website/eee_teachers.html', context)
 
+def eee_achievements(request):
+  achievements = EeeAchievement.objects.all()
+  context = {'achievements' : achievements}
+  return render(request, 'website/eee_achievements.html', context)
+
 
 def bsh_dept(request):
   dept = BshNews.objects.all()
@@ -172,3 +177,29 @@ def bsh_achievements(request):
   achievements = BshAchievement.objects.all()
   context = {'achievements' : achievements}
   return render(request, 'website/bsh_achievements.html', context)
+
+def mca_dept(request):
+  dept = McaNews.objects.all()
+  context = { 'dept' : dept}
+  return render(request, 'website/mca_dept.html', context)
+
+def mca_news(request, pk):
+  mcaNews = McaNews.objects.get(id=pk)
+  images = mcaNews.mcaimages.all().order_by('-created')
+  context = {'news' : mcaNews, 'newsImages' : images}
+  return render(request, 'website/mca_news.html', context)
+
+def mca_events(request):
+  events = McaEvent.objects.all()
+  context = {'events' : events}
+  return render(request, 'website/mca_events.html', context)
+
+def mca_teachers(request):
+  teachers = McaTeacher.objects.all()
+  context = {'teachers' : teachers}
+  return render(request, 'website/mca_teachers.html', context)
+
+def mca_achievements(request):
+  achievements = McaAchievement.objects.all()
+  context = {'achievements' : achievements}
+  return render(request, 'website/mca_achievements.html', context)

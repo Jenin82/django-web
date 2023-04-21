@@ -34,7 +34,7 @@ urlpatterns = [
     path('eee_news/<str:pk>/', views.eee_news, name="eee-news"),
     path('eee_events/', views.eee_events, name="eee-events"),
     path('eee_teachers/', views.eee_teachers, name="eee-teachers"),
-    path('eee_achievements/', views.mech_achievements, name="mech-achievements"),
+    path('eee_achievements/', views.eee_achievements, name="eee-achievements"),
 
 
     path('bsh_dept/', views.bsh_dept, name="d-bsh"),
@@ -42,6 +42,13 @@ urlpatterns = [
     path('bsh_events/', views.bsh_events, name="bsh-events"),
     path('bsh_teachers/', views.bsh_teachers, name="bsh-teachers"),
     path('bsh_achievements/', views.bsh_achievements, name="bsh-achievements"),
+
+
+    path('mca_dept/', views.mca_dept, name="d-mca"),
+    path('mca_news/<str:pk>/', views.mca_news, name="mca-news"),
+    path('mca_events/', views.mca_events, name="mca-events"),
+    path('mca_teachers/', views.mca_teachers, name="mca-teachers"),
+    path('mca_achievements/', views.mca_achievements, name="mca-achievements"),
 
     
 ]
