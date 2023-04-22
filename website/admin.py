@@ -29,7 +29,6 @@ admin.site.register(EeeNewsImage)
 admin.site.register(EeeEvent)
 admin.site.register(EeeTeacher)
 admin.site.register(EeeAchievement)
-admin.site.register(EeeAchievement)
 
 
 admin.site.register(BshNews)
