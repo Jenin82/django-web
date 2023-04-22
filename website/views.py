@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from website.models import BshAchievement, BshEvent, BshNews, BshTeacher, CivilAchievement, CivilEvent, CivilNews, CivilTeacher, CollegeNews, CseAchievement, CseNews, CseEvent, CseTeacher, EeeAchievement, EeeEvent, EeeNews, EeeTeacher, McaAchievement, McaEvent, McaNews, McaTeacher, MechNews, MechAchievement, MechEvent, MechTeacher
+from website.models import BshAchievement, BshEvent, BshNews, BshTeacher, CivilAchievement, CivilEvent, CivilNews, CivilTeacher, CollegeNews, CseAchievement, CseNews, CseEvent, CseTeacher, EeeAchievement, EeeAchievement, EeeEvent, EeeNews, EeeTeacher, MbaAchievement, MbaEvent, MbaNews, MbaTeacher, McaAchievement, McaEvent, McaNews, McaNewsImage, McaTeacher, MechNews, MechAchievement, MechEvent, MechTeacher
 
 # Create your views here.
 
@@ -214,3 +214,35 @@ def mca_achievements(request):
   achievements = McaAchievement.objects.all()
   context = {'achievements' : achievements}
   return render(request, 'website/mca_achievements.html', context)
+
+def eee_achievements(request):
+  achievements = EeeAchievement.objects.all()
+  context = {'achievements' : achievements}
+  return render(request, 'website/eee_achievements.html', context)
+
+def mba_dept(request):
+  dept = McaNewsImage.objects.all()
+  context = { 'dept' : dept}
+  return render(request, 'website/mba_dept.html', context)
+
+def mba_news(request, pk):
+  mbaNews = MbaNews.objects.get(id=pk)
+  images = mbaNews.mbaimages.all().order_by('-created')
+  context = {'news' : mbaNews, 'newsImages' : images}
+  return render(request, 'website/mba_news.html', context)
+
+def mba_events(request):
+  events = MbaEvent.objects.all()
+  context = {'events' : events}
+  return render(request, 'website/mba_events.html', context)
+
+def mba_teachers(request):
+  teachers = MbaTeacher.objects.all()
+  context = {'teachers' : teachers}
+  return render(request, 'website/mba_teachers.html', context)
+
+def mba_achievements(request):
+  achievements = MbaAchievement.objects.all()
+  context = {'achievements' : achievements}
+  return render(request, 'website/mba_achievements.html', context)
+
