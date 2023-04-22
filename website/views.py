@@ -1,13 +1,24 @@
 from django.shortcuts import render
 
-from website.models import CivilAchievement, CivilEvent, CivilNews, CivilTeacher, CseAchievement, CseNews, CseEvent, CseTeacher, EeeAchievement, EeeEvent, EeeNews, EeeTeacher, MechNews, MechAchievement, MechEvent, MechTeacher
+from website.models import BshAchievement, BshEvent, BshNews, BshTeacher, CivilAchievement, CivilEvent, CivilNews, CivilTeacher, CollegeNews, CseAchievement, CseNews, CseEvent, CseTeacher, EeeAchievement, EeeAchievement, EeeEvent, EeeNews, EeeTeacher, McaAchievement, McaEvent, McaNews, McaTeacher, MechNews, MechAchievement, MechEvent, MechTeacher
 
 # Create your views here.
 
 def home(request):
-  number = 1000
-  context = {'number': number}
+  news = CollegeNews.objects.all()
+  context = { 'news' : news}
   return render(request, 'website/home.html', context)
+
+def college_news_main(request):
+  news = CollegeNews.objects.all()
+  context = { 'news' : news}
+  return render(request, 'website/college_news_main.html', context)
+
+def college_news(request, pk):
+  collegeNews = CollegeNews.objects.get(id=pk)
+  images = collegeNews.collegeimages.all().order_by('-created')
+  context = {'news' : collegeNews, 'newsImages' : images}
+  return render(request, 'website/college_news.html', context)
 
 def btech(request):
   context = {}
@@ -146,6 +157,63 @@ def eee_teachers(request):
   context = {'teachers' : teachers}
   return render(request, 'website/eee_teachers.html', context)
 
+def eee_achievements(request):
+  achievements = EeeAchievement.objects.all()
+  context = {'achievements' : achievements}
+  return render(request, 'website/eee_achievements.html', context)
+
+
+def bsh_dept(request):
+  dept = BshNews.objects.all()
+  context = { 'dept' : dept}
+  return render(request, 'website/bsh_dept.html', context)
+
+def bsh_news(request, pk):
+  bshNews = BshNews.objects.get(id=pk)
+  images = bshNews.bshimages.all().order_by('-created')
+  context = {'news' : bshNews, 'newsImages' : images}
+  return render(request, 'website/bsh_news.html', context)
+
+def bsh_events(request):
+  events = BshEvent.objects.all()
+  context = {'events' : events}
+  return render(request, 'website/bsh_events.html', context)
+
+def bsh_teachers(request):
+  teachers = BshTeacher.objects.all()
+  context = {'teachers' : teachers}
+  return render(request, 'website/bsh_teachers.html', context)
+
+def bsh_achievements(request):
+  achievements = BshAchievement.objects.all()
+  context = {'achievements' : achievements}
+  return render(request, 'website/bsh_achievements.html', context)
+
+def mca_dept(request):
+  dept = McaNews.objects.all()
+  context = { 'dept' : dept}
+  return render(request, 'website/mca_dept.html', context)
+
+def mca_news(request, pk):
+  mcaNews = McaNews.objects.get(id=pk)
+  images = mcaNews.mcaimages.all().order_by('-created')
+  context = {'news' : mcaNews, 'newsImages' : images}
+  return render(request, 'website/mca_news.html', context)
+
+def mca_events(request):
+  events = McaEvent.objects.all()
+  context = {'events' : events}
+  return render(request, 'website/mca_events.html', context)
+
+def mca_teachers(request):
+  teachers = McaTeacher.objects.all()
+  context = {'teachers' : teachers}
+  return render(request, 'website/mca_teachers.html', context)
+
+def mca_achievements(request):
+  achievements = McaAchievement.objects.all()
+  context = {'achievements' : achievements}
+  return render(request, 'website/mca_achievements.html', context)
 def eee_achievements(request):
   achievements = EeeAchievement.objects.all()
   context = {'achievements' : achievements}

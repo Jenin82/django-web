@@ -37,7 +37,21 @@ urlpatterns = [
     path('eee_achievements/', views.eee_achievements, name="eee-achievements"),
 
 
-    
+    path('bsh_dept/', views.bsh_dept, name="d-bsh"),
+    path('bsh_news/<str:pk>/', views.bsh_news, name="bsh-news"),
+    path('bsh_events/', views.bsh_events, name="bsh-events"),
+    path('bsh_teachers/', views.bsh_teachers, name="bsh-teachers"),
+    path('bsh_achievements/', views.bsh_achievements, name="bsh-achievements"),
+
+
+    path('mca_dept/', views.mca_dept, name="d-mca"),
+    path('mca_news/<str:pk>/', views.mca_news, name="mca-news"),
+    path('mca_events/', views.mca_events, name="mca-events"),
+    path('mca_teachers/', views.mca_teachers, name="mca-teachers"),
+    path('mca_achievements/', views.mca_achievements, name="mca-achievements"),
+
+    path('college_news/', views.college_news_main, name="college-news-main"),
+    path('college_news/<str:pk>/', views.college_news, name="college-news"),
     
 ]
 

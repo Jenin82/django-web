@@ -1,0 +1,79 @@
+{% extends 'website/main.html' %}
+
+{% block content %}
+
+<style>
+	.img-max .img-fit {
+			aspect-ratio: 1.45 / 1;
+			object-fit: cover;
+	}
+	.card, .img-max {
+			/* display: flex; */
+			height: 100%;
+			/* flex-direction: column; */
+			text-align: left !important;
+	}
+	.card-body {
+			display: flex;
+			height: 55%;
+			flex-direction: column;
+	}
+	.card-text {
+			/* flex: 1; */
+			flex-grow: 1;
+	}
+	@media (max-width: 767.98px) {
+			.img-max .img-fit {
+					aspect-ratio: 1.45 / 1;
+					object-fit: cover;
+			}
+	}
+	.img-max {
+		overflow: hidden;
+	}
+	.img-max img {
+		transition: all 0.3s ease;
+	}
+	.img-max:hover img {
+		transform: scale(1.15);
+	}
+	.title {
+		font-family: 'Exo 2', sans-serif;
+		font-weight: 600;
+		font-size: 35px;
+	}
+</style>
+
+
+
+
+<div class="pb-3" style="padding-top: 5rem;">
+	<div class="row text-center orange title pb-2">
+		<h1>{{news.title}}</h1>
+	</div>
+	<div class="row px-lg-5">
+		<p class="justify">{{news.body}}</p>
+	</div>
+	<hr>
+	<div class="row text-center pb-3">
+		<h2>Images</h2>
+	</div>
+
+
+	<div class="container">
+		<div class="row g-3">
+			{% for pic in newsImages %}
+			<div class="col-md-6 col-lg-4 col-12">
+				<div class="card">
+					<div class="img-max">
+						<img src="{{pic.image}}" class="card-img-top img-fit img-fluid" alt="News Image">
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
