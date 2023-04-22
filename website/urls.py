@@ -34,7 +34,7 @@ urlpatterns = [
     path('eee_news/<str:pk>/', views.eee_news, name="eee-news"),
     path('eee_events/', views.eee_events, name="eee-events"),
     path('eee_teachers/', views.eee_teachers, name="eee-teachers"),
-    path('eee_achievements/', views.mech_achievements, name="mech-achievements"),
+    path('eee_achievements/', views.eee_achievements, name="eee-achievements"),
 
 
     
