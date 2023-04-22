@@ -2,13 +2,9 @@ from django.contrib import admin
 
 # Register your models here.
 
-<<<<<<< HEAD
-from .models import CivilAchievement, CivilEvent, CivilNews, CivilNewsImage, CivilTeacher, CseAchievement, CseNews, CseNewsImage, CseEvent, CseTeacher, EeeAchievement, EeeEvent, EeeNews, EeeNewsImage, EeeTeacher, MechAchievement, MechEvent, MechNews, MechNewsImage, MechTeacher
-=======
-from .models import BshAchievement, BshEvent, BshNews, BshNewsImage, BshTeacher, CivilAchievement, CivilEvent, CivilNews, CivilNewsImage, CivilTeacher, CollegeNews, CollegeNewsImage, CseAchievement, CseNews, CseNewsImage, CseEvent, CseTeacher, EeeAchievement, EeeEvent, EeeNews, EeeNewsImage, EeeTeacher, McaAchievement, McaEvent, McaNews, McaNewsImage, McaTeacher, MechAchievement, MechEvent, MechNews, MechNewsImage, MechTeacher
+from .models import BshAchievement, BshEvent, BshNews, BshNewsImage, BshTeacher, CivilAchievement, CivilEvent, CivilNews, CivilNewsImage, CivilTeacher, CollegeNews, CollegeNewsImage, CseAchievement, CseNews, CseNewsImage, CseEvent, CseTeacher, EeeAchievement, EeeAchievement, EeeEvent, EeeNews, EeeNewsImage, EeeTeacher, MbaAchievement, MbaEvent, MbaNews, MbaNewsImage, MbaTeacher, McaAchievement, McaEvent, McaNews, McaNewsImage, McaTeacher, MechAchievement, MechEvent, MechNews, MechNewsImage, MechTeacher
 admin.site.register(CollegeNews)
 admin.site.register(CollegeNewsImage)
->>>>>>> a83d6a46d5169ba5223559e5ebb24828957c38af
 
 admin.site.register(CseNews)
 admin.site.register(CseNewsImage)
@@ -27,14 +23,13 @@ admin.site.register(CivilNewsImage)
 admin.site.register(CivilEvent)
 admin.site.register(CivilTeacher)
 admin.site.register(CivilAchievement)
-
+ 
 admin.site.register(EeeNews)
 admin.site.register(EeeNewsImage)
 admin.site.register(EeeEvent)
 admin.site.register(EeeTeacher)
 admin.site.register(EeeAchievement)
-<<<<<<< HEAD
-=======
+admin.site.register(EeeAchievement)
 
 
 admin.site.register(BshNews)
@@ -48,4 +43,9 @@ admin.site.register(McaNewsImage)
 admin.site.register(McaEvent)
 admin.site.register(McaTeacher)
 admin.site.register(McaAchievement)
->>>>>>> a83d6a46d5169ba5223559e5ebb24828957c38af
+
+admin.site.register(MbaNews)
+admin.site.register(MbaNewsImage)
+admin.site.register(MbaEvent)
+admin.site.register(MbaTeacher)
+admin.site.register(MbaAchievement)
