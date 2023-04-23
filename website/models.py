@@ -453,7 +453,7 @@ class MbaNews(models.Model):
 
 
 class MbaNewsImage(models.Model):
-	mcaDepartment = models.ForeignKey(McaNews, on_delete=models.CASCADE, related_name="mbaimages")
+	mbaDepartment = models.ForeignKey(McaNews, on_delete=models.CASCADE, related_name="mbaimages")
 	image = models.CharField(max_length=300, null=True, blank=True)
 	updated = models.DateTimeField(auto_now=True)
 	created = models.DateTimeField(auto_now_add=True)
