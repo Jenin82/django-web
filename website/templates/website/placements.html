@@ -1,0 +1,44 @@
+{% extends 'website/main.html' %}
+
+{% block content %}
+
+
+<div class="container pb-3" style="padding-top: 4rem;">
+	<div class="row pt-2">
+		<div class="col-12 text-center">
+			<h1 class="fw-bold font-Source-Sans-Pro">Campus Placements</h1>
+		</div>
+	</div>
+</div>
+	
+<hr>
+
+<style>
+	.social img {
+		transition: 0.3s;
+	}
+	.social {
+		overflow: hidden;
+	}
+	.social img:hover {
+		transform: scale(1.15);
+	}
+</style>
+<div class="container pt-3">
+	<div class="row text-center">
+		{% for placement in placements %}
+		<!-- Placement item -->
+		<div class="col-xl-3 col-sm-6 mb-5">
+			<div class="bg-white rounded social shadow py-5 px-4">
+				<img src="{{placement.profile_picture}}" alt="" width="150" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+				<h5 class="mb-0">{{placement.name}}</h5>
+				<span class="small text-uppercase text-muted">{{placement.role}}</span>
+				<h5 class="mb-0">{{placement.placed_at}}</h5>
+			</div>
+		</div><!-- End -->
+		{% endfor %}
+	</div>
+</div>
+
+
+{% endblock %}

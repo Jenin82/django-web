@@ -21,6 +21,11 @@ def college_news(request, pk):
   context = {'news' : collegeNews, 'newsImages' : images}
   return render(request, 'website/college_news.html', context)
 
+def placements(request):
+  placements = Placement.objects.all()
+  context = { 'placements' : placements }
+  return render(request, 'website/placements.html', context)
+
 def btech(request):
   context = {}
   return render(request, 'website/btech.html', context)

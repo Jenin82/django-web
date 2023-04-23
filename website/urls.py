@@ -59,6 +59,7 @@ urlpatterns = [
 
     path('college_news/', views.college_news_main, name="college-news-main"),
     path('college_news/<str:pk>/', views.college_news, name="college-news"),
+    path('placements/', views.placements, name="placements"),
     
 ]
 
