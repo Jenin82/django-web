@@ -1,12 +1,13 @@
 from django.shortcuts import render
 
-from website.models import BshAchievement, BshEvent, BshNews, BshTeacher, CivilAchievement, CivilEvent, CivilNews, CivilTeacher, CollegeNews, CseAchievement, CseNews, CseEvent, CseTeacher, EeeAchievement, EeeAchievement, EeeEvent, EeeNews, EeeTeacher, MbaAchievement, MbaEvent, MbaNews, MbaTeacher, McaAchievement, McaEvent, McaNews, McaNewsImage, McaTeacher, MechNews, MechAchievement, MechEvent, MechTeacher
+from website.models import BshAchievement, BshEvent, BshNews, BshTeacher, CivilAchievement, CivilEvent, CivilNews, CivilTeacher, CollegeNews, CseAchievement, CseNews, CseEvent, CseTeacher, EeeAchievement, EeeAchievement, EeeEvent, EeeNews, EeeTeacher, MbaAchievement, MbaEvent, MbaNews, MbaTeacher, McaAchievement, McaEvent, McaNews, McaNewsImage, McaTeacher, MechNews, MechAchievement, MechEvent, MechTeacher, Placement
 
 # Create your views here.
 
 def home(request):
   news = CollegeNews.objects.all()
-  context = { 'news' : news}
+  placements = Placement.objects.all().order_by('-created')[:8]
+  context = { 'news' : news, 'placements' : placements}
   return render(request, 'website/home.html', context)
 
 def college_news_main(request):
@@ -130,16 +131,10 @@ def civil_achievements(request):
   context = {'achievements' : achievements}
   return render(request, 'website/civil_achievements.html', context)
 
-
-
-
 def eee_dept(request):
   dept = EeeNews.objects.all()
   context = { 'dept' : dept}
   return render(request, 'website/eee_dept.html', context)
-
-
-
 
 def eee_news(request, pk):
   eeeNews = EeeNews.objects.get(id=pk)
@@ -161,7 +156,6 @@ def eee_achievements(request):
   achievements = EeeAchievement.objects.all()
   context = {'achievements' : achievements}
   return render(request, 'website/eee_achievements.html', context)
-
 
 def bsh_dept(request):
   dept = BshNews.objects.all()

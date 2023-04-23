@@ -504,3 +504,17 @@ class MbaAchievement(models.Model):
 
   def __str__(self):
     return self.title
+
+class Placement(models.Model):
+  name = models.CharField(max_length=200)
+  profile_picture = models.CharField(max_length=300)
+  role = models.CharField(max_length=100)
+  placed_at = models.CharField(max_length=200)
+  updated = models.DateTimeField(auto_now=True)
+  created = models.DateTimeField(auto_now_add=True) 
+  
+  class Meta:
+    ordering = ['-created']
+
+  def __str__(self):
+    return self.name
