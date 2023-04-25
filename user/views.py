@@ -25,7 +25,7 @@ def loginPage(request):
       if 'next' in request.POST:
         return HttpResponseRedirect(request.POST.get('next'))
       else:
-        return render(request, "website/home.html")
+        return render(request, "user/profile.html")
     else:
       return render(request, "user/login.html", {
 				"message": "Invalid username or password"

@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from .decorators import allowed_users
 
 
 
@@ -69,6 +70,7 @@ def deleteRoom(request, pk):
     return redirect('g-home')
   return render(request, "grievance/delete.html", {'obj': room})
 
+@allowed_users(allowed_roles=['grievance_committee'])
 def statusResolved(request, pk):
   room = Room.objects.get(id=pk)
   room.status = 'Resolved'

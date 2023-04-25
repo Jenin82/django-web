@@ -15,7 +15,7 @@
 
 				<hr>
 				{% for message in room_messages %}
-				{% if message.user.is_superuser %}
+				{% if message.user.is_superuser or message.user|has_group:"grievance_committee" %}
 				<div class="card" >
 					<div class="card-body">
 						<h5 class="card-title">@Admin</h5>

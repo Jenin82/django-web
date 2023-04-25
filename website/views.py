@@ -1,5 +1,4 @@
 from django.shortcuts import render
-
 from website.models import BshAchievement, BshEvent, BshNews, BshTeacher, CivilAchievement, CivilEvent, CivilNews, CivilTeacher, CollegeNews, CseAchievement, CseNews, CseEvent, CseTeacher, EeeAchievement, EeeAchievement, EeeEvent, EeeNews, EeeTeacher, MbaAchievement, MbaEvent, MbaNews, MbaTeacher, McaAchievement, McaEvent, McaNews, McaNewsImage, McaTeacher, MechNews, MechAchievement, MechEvent, MechTeacher, Placement
 
 # Create your views here.
