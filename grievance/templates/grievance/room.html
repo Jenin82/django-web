@@ -4,7 +4,7 @@
 {% block content %}
 
 
-<div class="" style="padding-top: 10rem;">
+<div class="pb-5" style="padding-top: 10rem;">
 	<center>
 		<div class="card text-center w-75">
 			<div class="card-header">
@@ -57,7 +57,7 @@
 			<div class="card-footer text-body-secondary">
 				<a href="{% url 'g-home' %}" class="btn btn-warning">Go back</a>
 			</div>
-			{% if request.user.is_superuser or message.user|has_group:"grievance_committee" %}
+			{% if request.user.is_superuser or request.user|has_group:"grievance_committee" %}
 			<div class="card-footer text-body-secondary">
 				<a href="{% url 'resolved' room.id %}" class="btn btn-success">Mark as resolved</a>
 			</div>
