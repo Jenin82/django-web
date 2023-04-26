@@ -16,7 +16,7 @@
 		{% for room in rooms %}
 		{% if request.user.is_superuser or request.user|has_group:"grievance_committee" %}
 		<section class="container text-dark">
-			<div class="card mb-3">
+			<div class="card shadow mb-3">
 				<div class="card-body">
 
 					<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
@@ -55,7 +55,7 @@
 		</section>
 		{% elif request.user == room.host %}
 		<section class="container text-dark">
-			<div class="card mb-3">
+			<div class="card shadow mb-3">
 				<div class="card-body">
 
 					<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
