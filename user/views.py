@@ -4,6 +4,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.urls import reverse
 
+from website.models import CollegeNews, Placement
+
 
 # Create your views here.
 
@@ -36,6 +38,7 @@ def loginPage(request):
 
 def logoutPage(request):
   logout(request)
-  return render(request, "website/home.html", {
-		"message": "Logged out"
-	})
+  news = CollegeNews.objects.all()
+  placements = Placement.objects.all().order_by('-created')[:8]
+  context = { 'news' : news, 'placements' : placements, 'message': "Logged out"}
+  return render(request, "website/home.html", context)

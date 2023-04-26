@@ -1,4 +1,5 @@
 {% extends 'grievance/main.html' %}
+{% load user_extras %}
 
 {% block content %}
 
@@ -56,7 +57,7 @@
 			<div class="card-footer text-body-secondary">
 				<a href="{% url 'g-home' %}" class="btn btn-warning">Go back</a>
 			</div>
-			{% if request.user.is_superuser %}
+			{% if request.user.is_superuser or message.user|has_group:"grievance_committee" %}
 			<div class="card-footer text-body-secondary">
 				<a href="{% url 'resolved' room.id %}" class="btn btn-success">Mark as resolved</a>
 			</div>
