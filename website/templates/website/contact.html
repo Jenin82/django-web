@@ -1,0 +1,74 @@
+{% extends 'website/main.html' %}
+
+{% block content %}
+
+<section class="text-center">
+
+
+    <h3 class="mb-5">Contact us</h3>
+  
+    <div class="row">
+      <div class="col-lg-5">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12094.57348593182!2d-74.00599512526003!3d40.72586666928451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2598f988156a9%3A0xd54629bdf9d61d68!2sBroadway-Lafayette%20St!5e0!3m2!1spl!2spl!4v1624523797308!5m2!1spl!2spl"
+          class="h-100 w-100" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+  
+      <div class="col-lg-7">
+        <form>
+          <div class="row">
+            <div class="col-md-9">
+              <div class="row mb-4">
+                <div class="col-md-6 mb-4 mb-md-0">
+                  <div class="form-outline">
+                    <input type="text" id="form3Example1" class="form-control" />
+                    <label class="form-label" for="form3Example1">First name</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-outline">
+                    <input type="email" id="form3Example2" class="form-control" />
+                    <label class="form-label" for="form3Example2">Email Address</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-outline mb-4">
+                <input type="text" id="form3Example3" class="form-control" />
+                <label class="form-label" for="form3Example3">Subject</label>
+              </div>
+              <div class="form-outline mb-4">
+                <textarea class="form-control" id="form4Example3" rows="4"></textarea>
+                <label class="form-label" for="form4Example3">Message</label>
+              </div>
+              <div class="text-center text-md-start">
+                <button type="submit" class="btn btn-primary mb-5 mb-md-0">
+                  Send
+                </button>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <ul class="list-unstyled">
+                <li>
+                  <i class="fas fa-map-marker-alt fa-2x text-primary"></i>
+                  <p><small>New York, NY 10012, USA</small></p>
+                </li>
+                <li>
+                  <i class="fas fa-phone fa-2x text-primary"></i>
+                  <p><small>+ 01 234 567 89</small></p>
+                </li>
+                <li>
+                  <i class="fas fa-envelope fa-2x text-primary"></i>
+                  <p><small>contact@gmail.com</small></p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </form>
+  
+      </div>
+    </div>
+  
+  
+  </section>
+
+{% endblock %}
