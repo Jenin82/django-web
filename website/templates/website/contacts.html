@@ -1,0 +1,65 @@
+{% extends 'website/main.html' %} {% block content %}
+<style>
+    .container {
+        margin-top: 5rem;
+    }
+	.main {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+</style>
+<div class="container">
+    <div class="row main">
+        <div class="col-8">
+            <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
+                <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div>
+                <script>
+                    (function () {
+                        var setting = {
+                            query: "SNGIST GROUP OF INSTITUTIONS, Kochi, Kerala, India",
+                            width: 500,
+                            height: 600,
+                            satellite: false,
+                            zoom: 18,
+                            placeId: "ChIJQdXRSaoaCDsR2NIhdAAVPb0",
+                            cid: "0xbd3d15007421d2d8",
+                            coords: [10.1498064, 76.2668063],
+                            lang: "en",
+                            queryString:
+                                "SNGIST GROUP OF INSTITUTIONS, Kochi, Kerala, India",
+                            centerCoord: [10.1498064, 76.2668063],
+                            id: "map-9cd199b9cc5410cd3b1ad21cab2e54d3",
+                            embed_id: "942629",
+                        };
+                        var d = document;
+                        var s = d.createElement("script");
+                        s.src =
+                            "https://1map.com/js/script-for-user.js?embed_id=942629";
+                        s.async = true;
+                        s.onload = function (e) {
+                            window.OneMap.initMap(setting);
+                        };
+                        var to = d.getElementsByTagName("script")[0];
+                        to.parentNode.insertBefore(s, to);
+                    })();
+                </script>
+                <a href="https://1map.com/map-embed">1 Map</a>
+            </div>
+        </div>
+        <div class="col-4 contacts-main">
+            <div>
+                <h1>Contacts</h1>
+                <p>
+                    Mannam, Manjali (P. O.)<br />
+                    North Paravur, Ernakulam<br />
+                    Kerala, India - 683520
+                </p>
+				<p>+91 484 2887000</p>
+				<p>+91 484 2445252</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
