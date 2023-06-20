@@ -70,7 +70,7 @@ def deleteRoom(request, pk):
     return redirect('g-home')
   return render(request, "grievance/delete.html", {'obj': room})
 
-@allowed_users(allowed_roles=['grievance_committee'])
+# @allowed_users(allowed_roles=['grievance_committee'])
 def statusResolved(request, pk):
   room = Room.objects.get(id=pk)
   room.status = 'Resolved'
