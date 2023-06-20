@@ -73,7 +73,7 @@
 					
 					<div class="offcanvas-body">
 						<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-							{% if request.user.is_superuser %}
+							{% if request.user.is_superuser or request.user.is_staff %}
 							<li class="nav-item">
 								<a class="nav-link" href="{% url 'admin:index' %}">Admin Portal</a>
 							</li>
