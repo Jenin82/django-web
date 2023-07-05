@@ -1,0 +1,123 @@
+{% extends 'website/main.html' %} {% block content %}
+
+<section class="text-start">
+    <h3 class="mb-5">Contact us</h3>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div style="width: 600px; position: relative">
+                <iframe
+                    width="700"
+                    height="440"
+                    src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=SNGIST%20Group%20of%20Institutions+(SNGIST)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed"
+                    frameborder="0"
+                    scrolling="no"
+                    marginheight="0"
+                    marginwidth="0"
+                ></iframe>
+                <div
+                    style="
+                        position: absolute;
+                        width: 80%;
+                        bottom: 10px;
+                        left: 0;
+                        right: 0;
+                        margin-left: auto;
+                        margin-right: auto;
+                        color: #000;
+                        text-align: center;
+                    "
+                >
+                </div>
+                <style>
+                    #gmap_canvas img {
+                        max-width: none !important;
+                        background: none !important;
+                    }
+                </style>
+            </div>
+            <br />
+        </div>
+
+        <div class="col-lg-6">
+            <form>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row mb-4">
+                            <div class="col-lg-2 mb-4 mb-md-0">
+                                <!-- <div class="form-outline">
+                                    <input
+                                        type="text"
+                                        id="form3Example1"
+                                        class="form-control"
+                                    />
+                                    <label
+                                        class="form-label"
+                                        for="form3Example1"
+                                        >First name</label
+                                    >
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-outline">
+                                    <input
+                                        type="email"
+                                        id="form3Example2"
+                                        class="form-control"
+                                    />
+                                    <label
+                                        class="form-label"
+                                        for="form3Example2"
+                                        >Email Address</label
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input
+                                type="text"
+                                id="form3Example3"
+                                class="form-control"
+                            />
+                            <label class="form-label" for="form3Example3"
+                                >Subject</label
+                            >
+                        </div>
+                        <div class="form-outline mb-4">
+                            <textarea
+                                class="form-control"
+                                id="form4Example3"
+                                rows="4"
+                            ></textarea>
+                            <label class="form-label" for="form4Example3"
+                                >Message</label
+                            >
+                        </div>
+                        <div class="text-center text-md-start">
+                            <button
+                                type="submit"
+                                class="btn btn-primary mb-5 mb-md-0"
+                            >
+                                Send
+                            </button>
+                        </div> -->
+                    </div>
+                    <div class="col-lg-10">
+                        <div>
+                <h1>Contacts</h1>
+                <p>
+                    Mannam, Manjali (P. O.)<br />
+                    North Paravur, Ernakulam<br />
+                    Kerala, India - 683520
+                </p>
+                <p>+91 484 2887000</p>
+                <p>+91 484 2445252</p>
+            </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

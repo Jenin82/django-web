@@ -4,61 +4,51 @@
 
 
 
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-12 bg-image fixed-top p-0 z-n1">
-			<img class="pt-3" src="http://sngist.org/contents/wp-content/themes/sngist18/assets/img/slides/slide_1.jpg" alt="college-image" width="100%" height="650vh">
-		</div>
-	</div>
-</div>
-
-<div class="college-code container-fluid pt-2 fixed-top">
+<div class="college-code container-fluid" style="padding-top: 5rem;">
 	<div class="row">
 
-		<div class="col-12">
-		</div>	
-		<h1 style="text-align: center; background-color: white;">B-TECH</h1>
-
-		<div class="p-5"></div>
+		<h1 style="color:black; text-align: center; font-weight:900; font-family:sans-serif" class="text-dark p-3">B-TECH</h1>
 
 		<div class="col-md-3 col-12 p-2 d-flex justify-content-evenly">
-			<div class="card text-center" style="width: 18rem;">
-				<img src="6.jpg" class="card-img-top" alt="...">
-				<h5 class="card-title">CSE</h5>
-				<p class="card-text">Computer Science Engineering is a course that deals with the design, implementation, and management of information systems of both software & hardware processes. A computer scientist specializes in the theory of computation and the design of computational systems.</p>
-				<div class="card-footer"><a href="{% url 'btech' %}" class="btn btn-warning">More Information</a></div>
+			<div class="card shadow text-center d-flex flex-column" style="width: 18rem;">
+				<img src="https://github.com/BimalBabu217/PROJECT-/blob/main/6.jpg?raw=true" class="card-img-top" alt="..." height="150rem">
+				<h5 class="card-title p-1">CSE</h5>
+				<p class="card-text p-1">Computer Science Engineering is a course that deals with the design, implementation, and management of information systems of both software & hardware processes. A computer scientist specializes in the theory of computation and the design of computational systems.</p>
+				<div class="card-footer mt-auto"><a href="{% url 'cse' %}" class="btn btn-warning">More Information</a></div>
 			</div>
 		</div>
 
 		<div class="col-md-3 col-12 p-2 d-flex justify-content-evenly">
-			<div class="card text-center " style="width: 18rem; ">
-				<img src="5.jpeg" class="card-img-top" alt="...">
-				<h5 class="card-title">CIVIL</h5>
-				<p class="card-text">Civil engineering is a professional engineering discipline that deals with the design, construction, and maintenance of the physical and naturally built environment, including public works such as roads, bridges, canals, dams, airports, sewage systems, pipelines, structural components of buildings, and railways.</p>
-				<div class="card-footer"><a href="http://127.0.0.1:5500/work/civil.html" class="btn btn-warning">More Information</a></div>
+			<div class="card shadow text-center d-flex flex-column" style="width: 18rem; ">
+				<img src="https://github.com/BimalBabu217/PROJECT-/blob/main/5.jpeg?raw=true" class="card-img-top" alt="..." height="150rem">
+				<h5 class="card-title p-1">CIVIL</h5>
+				<p class="card-text p-1">Civil engineering is a professional engineering discipline that deals with the design, construction, and maintenance of the physical and naturally built environment, including public works such as roads, bridges, canals, dams, airports, sewage systems, pipelines, structural components of buildings, and railways.</p>
+				<div class="card-footer mt-auto"><a href="{% url 'civil' %}" class="btn btn-warning">More Information</a></div>
 			</div>
 		</div>
 
 		<div class="col-md-3 col-12 p-2 d-flex justify-content-evenly">
-			<div class="card text-center " style="width: 18rem;  ">
-				<img src="7.jpeg" class="card-img-top" alt="...">
-				<h5 class="card-title">MECHANICAL ENGINEERING</h5>
-				<p class="card-text">Mechanical engineering is one of the broadest engineering disciplines. Mechanical engineers design, develop, build, and test. They deal with anything that moves, from components to machines to the human body.</p>
-				<div class="card-footer"><a href="http://127.0.0.1:5500/work/me.html" class="btn btn-warning">More Information</a></div>
+			<div class="card shadow text-center d-flex flex-column" style="width: 18rem;  ">
+				<img src="https://github.com/BimalBabu217/PROJECT-/blob/main/7.jpeg?raw=true" class="card-img-top" alt="..." height="150rem">
+				<h5 class="card-title p-1">MECHANICAL ENGINEERING</h5>
+				<p class="card-text p-2">Mechanical engineering is one of the broadest engineering disciplines. Mechanical engineers design, develop, build, and test. They deal with anything that moves, from components to machines to the human body.</p>
+				<div class="card-footer mt-auto"><a href="{% url 'me' %}" class="btn btn-warning">More Information</a></div>
 			</div>
 		</div>
 
 		<div class="col-md-3 col-12 p-2 d-flex justify-content-evenly">
-			<div class="card text-center " style="width: 18rem; ">
-				<img src="9.jpeg" class="card-img-top" alt="...">
-				<h5 class="card-title">EEE</h5>
-				<p class="card-text">Electrical engineering is an engineering discipline concerned with the study, design, and application of equipment, devices, and systems which use electricity, electronics, and electromagnetism.</p>
-				<div class="card-footer"><a href="http://127.0.0.1:5500/work/EEE.html" class="btn btn-warning">More Information</a></div>
+			<div class="card shadow text-center d-flex flex-column" style="width: 18rem; ">
+				<img src="https://github.com/BimalBabu217/PROJECT-/blob/main/9.jpeg?raw=true" class="card-img-top" alt="..." height="150rem">
+				<h5 class="card-title p-1">EEE</h5>
+				<p class="card-text p-3">Electrical engineering is an engineering discipline concerned with the study, design, and application of equipment, devices, and systems which use electricity, electronics, and electromagnetism.</p>
+				<div class="card-footer mt-auto"><a href="{% url 'eee' %}" class="btn btn-warning">More Information</a></div>
 			</div>
 		</div>
 
 	</div>
 </div>
+
+<div class="p-2"></div>
 
 
 {% endblock %}

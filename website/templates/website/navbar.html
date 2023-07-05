@@ -1,52 +1,141 @@
+<style>
+	a, .a {
+			color: black;
+			text-decoration: none;
+			font-size: large;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			font-weight: bold;
+		}
+	
+</style>
+
 <!-- Navbar -->
-<nav class="navbar fixed-top z-3">
-	<div class="container-fluid pt-1">
-		<a href="{% url 'home' %}">
-			<img class="logo" src="http://sngist.org/contents/wp-content/themes/sngist18/assets/img/logo.png" alt="sngist-logo"></a>
-		</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="offcanvas offcanvas-end text-bg-light" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-			<div class="offcanvas-header ">
-				<h4 class="offcanvas-title" id="offcanvasDarkNavbarLabel">COLLEGE CODE: SNT</h4>
-				<button type="button" class="btn-close btn-close-black " data-bs-dismiss="offcanvas" aria-label="Close"></button>
-			</div>
-			
-			<div class="offcanvas-body">
-				<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-					<li class="nav-item">
-						<a class="nav-link" href="{% url 'admin:index' %}">Admin login</a>
-					</li>
+		<nav class="navbar navbar1 fixed-top z-10 position-absolute">
+			<div class="container-fluid pt-1 ">
+				<a href="{% url 'home' %}">
+					<img class="logo" src="http://sngist.org/contents/wp-content/themes/sngist18/assets/img/logo.png" alt="sngist-logo"></a>
+				</a>
+
+				<nav class="navbar navbar-expand-lg">
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+						<div class="input-group">
+							<a href="{% url 'home' %}" class="ms-5">Home</a>
+							<a href="{% url 'contacts' %}" class="ms-5">Contacts</a>
+							<a href="{% url 'college-news-main' %}" class="ms-5">News</a>
+							<a href="{% url 'college-news-main' %}" class="ms-5">Events</a>
+							
+							<div class="nav-item dropdown a">
+								<a class="nav-link dropdown-toggle ms-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Departments</a>
+									<ul class="dropdown-menu dropdown-menu-light">
+										<li><a class="dropdown-item" href="{% url 'd-cse' %}">CSE</a></li>
+										<li><a class="dropdown-item" href="{% url 'd-mech' %}">ME</a></li>
+										<li><a class="dropdown-item" href="{% url 'd-eee' %}">EEE</a></li>
+										<li><a class="dropdown-item" href="{% url 'd-civil' %}">CE</a></li>
+										<li><a class="dropdown-item" href="{% url 'd-mca' %}">MCA</a></li>
+										<li><a class="dropdown-item" href="{% url 'd-mba' %}">MBA</a></li>
+										<li><a class="dropdown-item" href="{% url 'd-bsh' %}">BSH</a></li>
+									</ul>
+							</div>
+							<div class="nav-item dropdown a">
+								<a class="nav-link dropdown-toggle ms-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Courses</a>
+									<ul class="dropdown-menu dropdown-menu-light">
+										<li><a class="dropdown-item" href="{% url 'btech' %}">B.Tech</a></li>
+										<li><a class="dropdown-item" href="{% url 'mca' %}">MCA</a></li>
+										<li><a class="dropdown-item" href="{% url 'mba' %}">MBA</a></li>
+										<li><a class="dropdown-item" href="{% url 'poly' %}">Polytechnic</a></li>
+									</ul>
+								</div>
+							<a href="{% url 'g-home' %}" class="ms-5">Grievance Portal</a>
+							<a href="{% url 'placements' %}" class="ms-5">Placements</a>
+							<div class="nav-item dropdown a">
+								<a class="nav-link dropdown-toggle ms-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Clubs</a>
+									<ul class="dropdown-menu dropdown-menu-light">
+										<li><a class="dropdown-item" href="https://jenin82.github.io/IEDC-webpage/">IEDC</a></li>
+										<li><a class="dropdown-item" href="">NSS</a></li>
+										<li><a class="dropdown-item" href="">VEGA</a></li>
+									</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				</nav>
+
+
+				<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="offcanvas z-5 offcanvas-end text-bg-light" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+					<div class="offcanvas-header ">
+						<h4 class="offcanvas-title" id="offcanvasDarkNavbarLabel">COLLEGE CODE: SNT</h4>
+						<button type="button" class="btn-close btn-close-black " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+					</div>
 					
-					<li class="nav-item">
-						<a class="nav-link" href="{% url 'g-home' %}">Grievance Portal</a>
-					</li>
+					<div class="offcanvas-body">
+						<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+							{% if request.user.is_superuser or request.user.is_staff %}
+							<li class="nav-item">
+								<a class="nav-link" href="{% url 'admin:index' %}">Admin Portal</a>
+							</li>
+							{% endif %}
+							<li class="nav-item">
+								<a class="nav-link" href="{% url 'g-home' %}">Grievance Portal</a>
+							</li>
 
-					{% if request.user.is_authenticated %}
-					<li class="nav-item">
-						<a class="nav-link" href="{% url 'user-profile' user.id %}">Profile</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{% url 'logout' %}">Logout</a>
-					</li>
-					{% else %}
-					<li class="nav-item">
-						<a class="nav-link" href="{% url 'login' %}">Student Login</a>
-					</li>
-					{% endif %}
+							{% if request.user.is_authenticated %}
+							<li class="nav-item">
+								<a class="nav-link" href="{% url 'user-profile' user.id %}">Profile</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{% url 'logout' %}">Logout</a>
+							</li>
+							{% else %}
+							<li class="nav-item">
+								<a class="nav-link" href="{% url 'login' %}">Login</a>
+							</li>
+							{% endif %}
+							<li class="nav-item">
+								<a class="nav-link" href="">About</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">News</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">Events</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Departments</a>
+									<ul class="dropdown-menu dropdown-menu-light">
+										<li><a class="dropdown-item" href="{% url 'd-cse' %}">CSE</a></li>
+										<li><a class="dropdown-item" href="{% url 'd-mech' %}">ME</a></li>
+										<li><a class="dropdown-item" href="{% url 'd-eee' %}">EEE</a></li>
+										<li><a class="dropdown-item" href="{% url 'd-civil' %}">CE</a></li>
+										<li><a class="dropdown-item" href="{% url 'd-mca' %}">MCA</a></li>
+										<li><a class="dropdown-item" href="{% url 'd-mba' %}">MBA</a></li>
+										<li><a class="dropdown-item" href="{% url 'd-bsh' %}">BSH</a></li>
+									</ul>
+								</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">Clubs & Associations</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">Contact</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">Placements</a>
+							</li>
 
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Courses</a>
-							<ul class="dropdown-menu dropdown-menu-light">
-								<li><a class="dropdown-item" href="{% url 'btech' %}">B.Tech</a></li>
-								<li><a class="dropdown-item" href="{% url 'mca' %}">MCA</a></li>
-								<li><a class="dropdown-item" href="{% url 'mba' %}">MBA</a></li>
-								<li><a class="dropdown-item" href="{% url 'poly' %}">Polytechnic</a></li>
-							</ul>
-					</li>
-				</ul>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Courses</a>
+									<ul class="dropdown-menu dropdown-menu-light">
+										<li><a class="dropdown-item" href="{% url 'btech' %}">B.Tech</a></li>
+										<li><a class="dropdown-item" href="{% url 'mca' %}">MCA</a></li>
+										<li><a class="dropdown-item" href="{% url 'mba' %}">MBA</a></li>
+										<li><a class="dropdown-item" href="{% url 'poly' %}">Polytechnic</a></li>
+									</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
-		</div>
-	</div>
-</nav>
+		</nav>

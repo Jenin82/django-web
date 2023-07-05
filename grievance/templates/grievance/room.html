@@ -1,9 +1,77 @@
 {% extends 'grievance/main.html' %}
+{% load user_extras %}
 
 {% block content %}
 
-<h1>{{room.name}}</h1>
-<p>{{room.description}}</p>
+
+<div class="pb-5" style="padding-top: 10rem;">
+	<center>
+		<div class="card text-center w-75">
+			<div class="card-header">
+				<h1 class="card-title">{{room.name}}</h1>
+			</div>
+			<div class="card-body">
+				<h5 class="card-text text-danger">{{room.description}}</h5>
+
+
+				<hr>
+				{% for message in room_messages %}
+				{% if message.user.is_superuser or message.user|has_group:"grievance_committee" %}
+				<div class="card" >
+					<div class="card-body">
+						<h5 class="card-title">@Admin</h5>
+						<h6 class="card-subtitle mb-2 text-body-secondary">{{message.created|timesince}} ago</h6>
+						<p class="card-text">{{message.body}}</p>
+					</div>
+				</div>
+				{% else %}
+				<div class="card" >
+					<div class="card-body">
+						<h5 class="card-title">@User</h5>
+						<h6 class="card-subtitle mb-2 text-body-secondary">{{message.created|timesince}} ago</h6>
+						<p class="card-text">{{message.body}}</p>
+					</div>
+				</div>
+				{% endif %}
+				{% endfor %}
+
+				
+				{% if request.user.is_authenticated %}
+				<div class="message-form pt-4">
+					<form action="" method="POST" class="row row-cols-lg-auto g-3 align-items-center justify-content-center">
+						{% csrf_token %}
+						<div class="col-12 w-75">
+							<textarea class="form-control" name="body" rows="2" id="validationTextarea" placeholder="Write your message..." required></textarea>
+							<div class="invalid-feedback">Please enter a message in the textarea.</div>
+						</div>
+						<div class="col-12">
+							<button type="submit" class="btn btn-primary">Send</button>
+						</div>
+					</form>
+				</div>
+				{% endif %}
+
+
+
+			</div>
+			<div class="card-footer text-body-secondary">
+				<a href="{% url 'g-home' %}" class="btn btn-warning">Go back</a>
+			</div>
+			{% if request.user.is_superuser or request.user|has_group:"grievance_committee" %}
+			<div class="card-footer text-body-secondary">
+				<a href="{% url 'resolved' room.id %}" class="btn btn-success">Mark as resolved</a>
+			</div>
+			{% endif %}
+			{% if request.user == room.host %}
+				{% if room.status == 'Resolved' %}
+			<div class="card-footer text-body-secondary">
+				<a href="{% url 'reopen' room.id %}" class="btn btn-danger">Re-open</a>
+			</div>
+				{% endif %}
+			{% endif %}
+		</div>
+	</center>
+</div>
 
 
 {% endblock %}
