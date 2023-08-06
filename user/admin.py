@@ -1,6 +1,5 @@
-
 from typing import Set
-
+from .models import UserProfile
 from django.contrib import admin
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
@@ -13,7 +12,7 @@ class CustomUserAdmin(UserAdmin):
 		form = super().get_form(request, obj, **kwargs)
 		is_superuser = request.user.is_superuser
 		disabled_fields = set()  # type: Set[str]
-  
+
 		if not is_member(request.user):
 				disabled_fields |= {
 						'is_superuser',
@@ -49,3 +48,9 @@ class CustomUserAdmin(UserAdmin):
 
 admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)
+
+
+class UserProfileAdmin(admin.ModelAdmin):
+    list_display = ('user', 'mobile', 'user_class', 'img')
+
+admin.site.register(UserProfile, UserProfileAdmin)

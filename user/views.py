@@ -3,16 +3,20 @@ from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.urls import reverse
-
+from .models import UserProfile
 from website.models import CollegeNews, Placement
 
 
 # Create your views here.
 
 def userProfile(request, pk):
-  user = User.objects.get(id=pk)
-  context = {'user': user}
-  return render(request, "user/profile.html", context)
+    user = User.objects.get(id=pk)
+    try:
+        profile = UserProfile.objects.get(user=user)
+    except UserProfile.DoesNotExist:
+        profile = None
+    context = {'user': user, 'profile':profile}
+    return render(request, "user/profile.html", context)
 
 
 def loginPage(request):
