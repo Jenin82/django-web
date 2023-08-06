@@ -119,7 +119,6 @@
 							<a href="" class="ms-5">Home</a>
 							<a href="{% url 'contacts' %}" class="ms-5">Contacts</a>
 							<a href="{% url 'college-news-main' %}" class="ms-5">News</a>
-							<a href="{% url 'college-news-main' %}" class="ms-5">Events</a>
 							
 							<div class="nav-item dropdown a">
 								<a class="nav-link dropdown-toggle ms-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Departments</a>
@@ -191,13 +190,7 @@
 							</li>
 							{% endif %}
 							<li class="nav-item">
-								<a class="nav-link" href="">About</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="">News</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="">Events</a>
+								<a class="nav-link" href="{% url 'college-news-main' %}">News</a>
 							</li>
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Departments</a>
@@ -212,13 +205,10 @@
 									</ul>
 								</li>
 							<li class="nav-item">
-								<a class="nav-link" href="">Clubs & Associations</a>
+								<a class="nav-link" href="{% url 'contacts' %}">Contact</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="">Contact</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="">Placements</a>
+								<a class="nav-link" href="{% url 'placements' %}">Placements</a>
 							</li>
 
 							<li class="nav-item dropdown">
