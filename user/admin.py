@@ -54,3 +54,5 @@ class UserProfileAdmin(admin.ModelAdmin):
     list_display = ('user', 'mobile', 'user_class', 'img')
 
 admin.site.register(UserProfile, UserProfileAdmin)
+
+
