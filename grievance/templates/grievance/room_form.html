@@ -10,11 +10,11 @@
 					{% csrf_token %}
 					<div class="mb-3">
 						<label for="exampleFormControlInput1" class="form-label"><h3>Grievance Title</h3></label>
-						<input type="text" name="title" form="room-form" class="form-control" id="exampleFormControlInput1" placeholder="">
+						<input type="text" name="title" form="room-form" class="form-control" id="exampleFormControlInput1" placeholder="" required>
 					</div>
 					<div class="mb-3">
 						<label for="exampleFormControlTextarea1" class="form-label"><h4>Description</h4></label>
-						<textarea class="form-control" name="description" form="room-form" id="exampleFormControlTextarea1" rows="3" placeholder="Explain the issue in detail"></textarea>
+						<textarea class="form-control" name="description" form="room-form" id="exampleFormControlTextarea1" rows="3" placeholder="Explain the issue in detail" required></textarea>
 					</div>
 					<div class="mb-3">
 						<a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary">Go back</a>
