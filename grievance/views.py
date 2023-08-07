@@ -18,6 +18,21 @@ def home(request):
   rooms = Room.objects.all()
   context = {'rooms': rooms}
   return render(request, 'grievance/home.html', context)
+@login_required(login_url='login')
+def homeResolved(request):
+  rooms = Room.objects.all()
+  context = {'rooms': rooms}
+  return render(request, 'grievance/resolved.html', context)
+@login_required(login_url='login')
+def homeInProgress(request):
+  rooms = Room.objects.all()
+  context = {'rooms': rooms}
+  return render(request, 'grievance/inprogress.html', context)
+@login_required(login_url='login')
+def homeReopen(request):
+  rooms = Room.objects.all()
+  context = {'rooms': rooms}
+  return render(request, 'grievance/reopened.html', context)
   
 def room(request, pk):
   room = Room.objects.get(id=pk)

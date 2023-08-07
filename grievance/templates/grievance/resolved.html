@@ -1,0 +1,108 @@
+{% extends 'grievance/main.html' %}
+{% load user_extras %}
+
+{% block content %}
+
+<h1>Grievance System</h1>
+<div class="pt-5">
+	<a href="{% url 'create-room' %}"><button type="button" class="btn btn-warning btn-lg"><i class="bi bi-plus-circle"></i> Create new grievance</button></a>
+	<style>
+		.btn-lg {
+			border: 1px solid white;
+		}
+	</style>
+	<div class="pt-2">
+		<a href="{% url 'resolved' %}"><button type="button" class="btn btn-success btn-lg"> Show Resolved</button></a>
+		<a href="{% url 'reopened' %}"><button type="button" class="btn btn-danger btn-lg"> Show Re-opened</button></a>
+		<a href="{% url 'inprogress' %}"><button type="button" class="btn btn-primary btn-lg"> Show In-Progress</button></a>
+	</div>
+	<div class="row pt-3">
+		
+		{% for room in rooms %}
+		{% if request.user.is_superuser or request.user|has_group:"grievance_committee" %}
+		{% if room.status == 'Resolved' %}
+		<section class="container text-dark">
+			<div class="card shadow mb-3">
+				<div class="card-body">
+
+					<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+						<div class="txt-group mr-2" role="group" aria-label="First group">
+							<h5 class="card-title black">{{room.name}}</h5>
+						</div>
+						<div class="input-group">
+							{% if room.status == 'In-progress' %}
+							<a href="" class="ms-2">
+								<button type="button" class="btn btn-info">Status: {{room.status}}</button>
+							</a>
+							{% elif room.status == 'Resolved' %}
+							<a href="" class="ms-2">
+								<button type="button" class="btn btn-success">Status: {{room.status}}</button>
+							</a>
+							{% elif room.status == 'Re-opened' %}
+							<a href="" class="ms-2">
+								<button type="button" class="btn btn-danger">Status: Re-open</button>
+							</a>
+							{% endif %}
+							{% if request.user == room.host %}
+							{% if room.status != 'In-progress' %}
+							<a href="{% url 'delete-room' room.id %}" class="ms-2">
+								<button type="button" class="btn btn-danger">Close</button>
+							</a>
+							{% endif %}
+							{% endif %}
+							<a href="{% url 'room' room.id %}" class="ms-2">
+								<button type="button" class="btn btn-success">Open</button>
+							</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+		{% endif %}
+		{% elif request.user == room.host %}
+		<section class="container text-dark">
+			<div class="card shadow mb-3">
+				<div class="card-body">
+
+					<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+						<div class="txt-group mr-2" role="group" aria-label="First group">
+							<h5 class="card-title black">{{room.name}}</h5>
+						</div>
+						<div class="input-group">
+							{% if room.status == 'In-progress' %}
+							<a href="" class="ms-2">
+								<button type="button" class="btn btn-info">Status: {{room.status}}</button>
+							</a>
+							{% elif room.status == 'Resolved' %}
+							<a href="" class="ms-2">
+								<button type="button" class="btn btn-success">Status: {{room.status}}</button>
+							</a>
+							{% elif room.status == 'Re-opened' %}
+							<a href="" class="ms-2">
+								<button type="button" class="btn btn-danger">Status: Re-open</button>
+							</a>
+							{% endif %}
+							{% if request.user == room.host %}
+							{% if room.status != 'In-progress' %}
+							<a href="{% url 'delete-room' room.id %}" class="ms-2">
+								<button type="button" class="btn btn-danger">Close</button>
+							</a>
+							{% endif %}
+							{% endif %}
+							<a href="{% url 'room' room.id %}" class="ms-2">
+								<button type="button" class="btn btn-success">Open</button>
+							</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+		{% endif %}
+		{% endfor %}
+
+	</div>
+</div>
+
+{% endblock %}
